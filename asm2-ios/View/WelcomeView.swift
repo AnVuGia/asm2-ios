@@ -41,9 +41,7 @@ struct WelcomeView: View {
                
                     ButtonUI(content: "Setting", action: {})
 
-                    Button(action: {}, label: {
-                        Text("Metalic button")
-                    })                }.offset(x:0,y:160)
+                                 }.offset(x:0,y:160)
 
                 
                 
