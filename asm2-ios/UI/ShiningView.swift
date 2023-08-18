@@ -1,42 +1,41 @@
+//
+//  ShiningView.swift
+//  asm2-ios
+//
+//  Created by An Vu Gia on 18/08/2023.
+//
+
 import SwiftUI
 
-struct TestView: View {
-    @State private var isShining = false
-    
+struct ShiningView: View {
+    @Binding var isShining : Bool
+    var shineColor : Color
+    var size : CGFloat
+    var shadowSize: CGFloat
     var body: some View {
         VStack {
             Circle()
                 .fill(
                     RadialGradient(
                         gradient: Gradient(stops: [
-                            .init(color: Color.yellow, location: 0),
+                            .init(color: shineColor, location: 0),
                             .init(color: Color.white, location: isShining ? 0.5 : 0.6),
-                            .init(color: Color.yellow, location: 1)
+                            .init(color: shineColor, location: 1)
                         ]),
                         center: .center,
                         startRadius: 0,
                         endRadius: isShining ? 100 : 110
                     )
                 )
-                .frame(width: 100, height: 100)
+                .frame(width: size, height: size)
                 .overlay(
                     Circle()
                         .stroke(Color.white, lineWidth: 4)
                         .opacity(isShining ? 0.5 : 0)
                 )
-                .shadow(color: .yellow, radius: isShining ? 10: 0)
-                .animation(Animation.easeInOut(duration: 1).repeatForever(autoreverses: true))
-            
-            Button("Toggle Shine") {
-                isShining.toggle()
-            }
-            .padding()
+                .shadow(color: shineColor, radius: isShining ? shadowSize : 0)
+                .animation(.easeInOut(duration: 1).repeatForever(autoreverses: true),value: isShining)            
         }
     }
 }
 
-struct TestView_Previews: PreviewProvider {
-    static var previews: some View {
-        TestView()
-    }
-}

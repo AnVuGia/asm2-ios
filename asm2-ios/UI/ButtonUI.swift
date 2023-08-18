@@ -13,7 +13,9 @@ struct ButtonUI: View {
 //    @Binding var isClick : Bool
     var body: some View {
         Button(action: {
-            print("start click")}
+            action()
+            
+        }
         ) {
             Text(content)
                 .font(.largeTitle)
