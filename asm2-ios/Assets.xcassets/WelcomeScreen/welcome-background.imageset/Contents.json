@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "pokemon_repeat_ball_wallpaper_by_jtfr_dfh98ac-fullview.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "pokemon_repeat_ball_wallpaper_by_jtfr_dfh98ac-fullview@2x.jpg",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "pokemon_repeat_ball_wallpaper_by_jtfr_dfh98ac-fullview@3x.jpg",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

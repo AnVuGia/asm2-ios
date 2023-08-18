@@ -14,6 +14,9 @@
 		E360E71F2A8F36040057CE20 /* asm2_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360E71E2A8F36040057CE20 /* asm2_iosTests.swift */; };
 		E360E7292A8F36040057CE20 /* asm2_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360E7282A8F36040057CE20 /* asm2_iosUITests.swift */; };
 		E360E72B2A8F36040057CE20 /* asm2_iosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360E72A2A8F36040057CE20 /* asm2_iosUITestsLaunchTests.swift */; };
+		E360E73A2A8F3A220057CE20 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360E7392A8F3A220057CE20 /* WelcomeView.swift */; };
+		E360E73D2A8F52250057CE20 /* ButtonUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360E73C2A8F52250057CE20 /* ButtonUI.swift */; };
+		E360E73F2A8F56DF0057CE20 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360E73E2A8F56DF0057CE20 /* Test.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,9 @@
 		E360E7242A8F36040057CE20 /* asm2-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "asm2-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E360E7282A8F36040057CE20 /* asm2_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = asm2_iosUITests.swift; sourceTree = "<group>"; };
 		E360E72A2A8F36040057CE20 /* asm2_iosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = asm2_iosUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E360E7392A8F3A220057CE20 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		E360E73C2A8F52250057CE20 /* ButtonUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonUI.swift; sourceTree = "<group>"; };
+		E360E73E2A8F56DF0057CE20 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +101,9 @@
 		E360E70B2A8F36030057CE20 /* asm2-ios */ = {
 			isa = PBXGroup;
 			children = (
+				E360E73B2A8F51EF0057CE20 /* UI */,
+				E360E7382A8F3A0A0057CE20 /* Model */,
+				E360E7372A8F3A010057CE20 /* View */,
 				E360E70C2A8F36030057CE20 /* asm2_iosApp.swift */,
 				E360E70E2A8F36030057CE20 /* ContentView.swift */,
 				E360E7102A8F36040057CE20 /* Assets.xcassets */,
@@ -127,6 +136,30 @@
 				E360E72A2A8F36040057CE20 /* asm2_iosUITestsLaunchTests.swift */,
 			);
 			path = "asm2-iosUITests";
+			sourceTree = "<group>";
+		};
+		E360E7372A8F3A010057CE20 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E360E7392A8F3A220057CE20 /* WelcomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E360E7382A8F3A0A0057CE20 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E360E73B2A8F51EF0057CE20 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				E360E73C2A8F52250057CE20 /* ButtonUI.swift */,
+				E360E73E2A8F56DF0057CE20 /* Test.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,7 +293,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E360E70F2A8F36030057CE20 /* ContentView.swift in Sources */,
+				E360E73A2A8F3A220057CE20 /* WelcomeView.swift in Sources */,
+				E360E73F2A8F56DF0057CE20 /* Test.swift in Sources */,
 				E360E70D2A8F36030057CE20 /* asm2_iosApp.swift in Sources */,
+				E360E73D2A8F52250057CE20 /* ButtonUI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
