@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WelcomeView: View {
-    @State private var isStart = false
+   @State private var isStart = false
     @State private var navigationNextView = false
     var body: some View {
         NavigationStack {
@@ -34,27 +34,20 @@ struct WelcomeView: View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                             .frame(width: 130, height: 100)
-                        }.rotationEffect(.degrees( isStart ? 360 : 0))
-                            .animation(.linear(duration: 1), value: isStart)
+                            .onAppear {
+                                isStart = true
+                            }
+                        }.rotationEffect(.degrees(isStart ? 360 : 0))
+                            .animation(.linear(duration: 2).repeatForever(autoreverses: false), value: isStart)
                             
                     }.offset(x:0,y:105)
                     
                     VStack{
-                        ButtonUI(content: "Start Game") {
-                            isStart.toggle()
-                            if isStart {
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 1){
-                                    navigationNextView.toggle()
-                                    print("Navigation next view: \(navigationNextView)")
-                                }
-                            }
-                            
-                        }
-                        if navigationNextView {
-                            NavigationLink(destination: MainPageView(), isActive: $navigationNextView){
-                                EmptyView()
-                            }
-                        }
+                        
+                        NavigationLink(destination: MainPageView(), label: {
+                            TextButtonUI(content: "Game Start")
+        
+                        })
                         ButtonUI(content: "Leaderboard", action:   {})
                         ButtonUI(content: "How to play", action: {})
                    
@@ -71,8 +64,6 @@ struct WelcomeView: View {
                 
             }
         }.onDisappear(){
-            isStart = false
-            navigationNextView = false
         }
     }
 }
