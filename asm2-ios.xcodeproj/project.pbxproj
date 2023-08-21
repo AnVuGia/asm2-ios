@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E33A32982A9324D100F98879 /* Main7x7View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33A32972A9324D100F98879 /* Main7x7View.swift */; };
+		E33A329A2A93264200F98879 /* PokeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33A32992A93264200F98879 /* PokeCard.swift */; };
+		E33A329C2A9327CE00F98879 /* PokeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33A329B2A9327CE00F98879 /* PokeCardView.swift */; };
 		E360E70D2A8F36030057CE20 /* asm2_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360E70C2A8F36030057CE20 /* asm2_iosApp.swift */; };
 		E360E70F2A8F36030057CE20 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360E70E2A8F36030057CE20 /* ContentView.swift */; };
 		E360E7112A8F36040057CE20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E360E7102A8F36040057CE20 /* Assets.xcassets */; };
@@ -41,6 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E33A32972A9324D100F98879 /* Main7x7View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main7x7View.swift; sourceTree = "<group>"; };
+		E33A32992A93264200F98879 /* PokeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeCard.swift; sourceTree = "<group>"; };
+		E33A329B2A9327CE00F98879 /* PokeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeCardView.swift; sourceTree = "<group>"; };
 		E360E7092A8F36030057CE20 /* asm2-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "asm2-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E360E70C2A8F36030057CE20 /* asm2_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = asm2_iosApp.swift; sourceTree = "<group>"; };
 		E360E70E2A8F36030057CE20 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -151,6 +157,8 @@
 			children = (
 				E360E7392A8F3A220057CE20 /* WelcomeView.swift */,
 				E360E7422A8F71680057CE20 /* MainPageView.swift */,
+				E33A32972A9324D100F98879 /* Main7x7View.swift */,
+				E33A329B2A9327CE00F98879 /* PokeCardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -158,6 +166,7 @@
 		E360E7382A8F3A0A0057CE20 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E33A32992A93264200F98879 /* PokeCard.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -309,8 +318,11 @@
 				E360E73A2A8F3A220057CE20 /* WelcomeView.swift in Sources */,
 				E360E7452A8F7CFD0057CE20 /* EmtyView.swift in Sources */,
 				E360E73F2A8F56DF0057CE20 /* Test.swift in Sources */,
+				E33A329A2A93264200F98879 /* PokeCard.swift in Sources */,
 				E360E7472A8F7E7C0057CE20 /* TextButtonUI.swift in Sources */,
+				E33A32982A9324D100F98879 /* Main7x7View.swift in Sources */,
 				E360E70D2A8F36030057CE20 /* asm2_iosApp.swift in Sources */,
+				E33A329C2A9327CE00F98879 /* PokeCardView.swift in Sources */,
 				E360E73D2A8F52250057CE20 /* ButtonUI.swift in Sources */,
 				E360E7412A8F69DD0057CE20 /* ShiningView.swift in Sources */,
 			);
