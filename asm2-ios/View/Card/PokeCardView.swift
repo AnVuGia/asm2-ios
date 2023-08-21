@@ -26,7 +26,7 @@ struct PokeCardView: View {
             Image(pokeCard.imgName)
                 .resizable()
                 .aspectRatio(contentMode: .fill )
-                .frame(width: 220, height: 300)
+                .frame(width: 240, height: 300)
                 .clipShape(RoundedRectangle(cornerRadius: 20))
                 .padding()
             VStack {
@@ -65,6 +65,6 @@ struct PokeCardView: View {
 
 struct PokeCardView_Previews: PreviewProvider {
     static var previews: some View {
-        PokeCardView(pokeCard: PokeCard(name: "charizard", type: "Grass", imgName: "charizard", id: "1"))
+        PokeCardView(pokeCard: PokeCard(name: "charizard", type: "Fire", imgName: "charizard", id: "1"))
     }
 }

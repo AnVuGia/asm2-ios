@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "charizard.png",
+      "filename" : "torchic.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "charizard@2x.png",
+      "filename" : "torchic@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "charizard@3x.png",
+      "filename" : "torchic@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

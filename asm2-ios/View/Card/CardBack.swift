@@ -12,7 +12,7 @@ struct CardBack: View {
         Image("card-back")
             .resizable()
             .aspectRatio(contentMode: .fit)
-            .frame(width: 250, height: 350)
+            .frame(width: 70)
     }
 }
 

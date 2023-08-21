@@ -8,25 +8,39 @@
 import SwiftUI
 
 struct TableView: View {
-    let row : Int
-    let column : Int
+    let row = 4
+    let column = 5
+    @State private var cards : [[Int]] = []
     var body: some View {
+        let rowCount = 0..<row
+        let columnCount = 0..<column
         VStack {
-            ForEach(0..<7) { row in
+            ForEach(rowCount, id: \.self) { row in
                 HStack {
-                    ForEach(0..<7) { column in
-                        Text("\(row * 7 + column)")
-                            .frame(width: 30, height: 30)
-                            .border(Color.black, width: 1)
+                    ForEach(columnCount, id: \.self) { column in
+                        CardBack()
+                                                    
                     }
                 }
             }
         }
     }
+    func createTableData() -> Void {
+        for _ in 0..<row {
+            var rowArray: [Int] = []
+            for _ in 0..<column {
+                rowArray.append(0)
+            }
+            cards.append(rowArray)
+        }
+        
+    }
 }
+
+    
 
 struct TableView_Previews: PreviewProvider {
     static var previews: some View {
-        TableView(row: 7, column: 7)
+        TableView()
     }
 }

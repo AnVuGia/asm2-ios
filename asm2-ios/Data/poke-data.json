@@ -6,20 +6,57 @@
 },
     {
         "id" : "2",
-        "name": "bulbasaur",
-        "imgName": "bulbasaur",
-        "type" : "Grass"
+        "name": "torchic",
+        "imgName": "torchic",
+        "type" : "Fire"
     },
     {
         "id" : "3",
-        "name": "pikachu",
-        "imgName": "pikachu",
-        "type" : "Electric"
+        "name": "chimchar",
+        "imgName": "chimchar",
+        "type" : "Fire"
     },
     {
         "id" : "4",
         "name": "squirtle",
         "imgName": "squirtle",
         "type" : "Water"
+    },
+    {
+        "id" : "5",
+        "name": "mudkip",
+        "imgName": "mudkip",
+        "type" : "Water"
+    },
+    {
+        "id" : "6",
+        "name": "piplup",
+        "imgName": "piplup",
+        "type" : "Water"
+    },
+    {
+        "id" : "7",
+        "name": "bulbasaur",
+        "imgName": "bulbasaur",
+        "type" : "Grass"
+    },
+    {
+        "id" : "8",
+        "name": "treecko",
+        "imgName": "treecko",
+        "type" : "Grass"
+    },
+    {
+        "id" : "9",
+        "name": "turtwig",
+        "imgName": "turtwig",
+        "type" : "Grass"
+    },
+    {
+        "id" : "10",
+        "name": "pikachu",
+        "imgName": "pikachu",
+        "type" : "Electric"
     }
+
 ]
