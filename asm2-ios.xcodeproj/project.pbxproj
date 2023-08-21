@@ -13,6 +13,7 @@
 		E33A32A72A93488A00F98879 /* poke-data.json in Resources */ = {isa = PBXBuildFile; fileRef = E33A32A62A93488A00F98879 /* poke-data.json */; };
 		E33A32A92A934AE300F98879 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33A32A82A934AE300F98879 /* TableView.swift */; };
 		E33A32AB2A9352C700F98879 /* MainNormalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33A32AA2A9352C700F98879 /* MainNormalView.swift */; };
+		E33A32AD2A93693B00F98879 /* PokeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33A32AC2A93693B00F98879 /* PokeData.swift */; };
 		E360E70D2A8F36030057CE20 /* asm2_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360E70C2A8F36030057CE20 /* asm2_iosApp.swift */; };
 		E360E70F2A8F36030057CE20 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360E70E2A8F36030057CE20 /* ContentView.swift */; };
 		E360E7112A8F36040057CE20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E360E7102A8F36040057CE20 /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 		E33A32A62A93488A00F98879 /* poke-data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "poke-data.json"; sourceTree = "<group>"; };
 		E33A32A82A934AE300F98879 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		E33A32AA2A9352C700F98879 /* MainNormalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNormalView.swift; sourceTree = "<group>"; };
+		E33A32AC2A93693B00F98879 /* PokeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeData.swift; sourceTree = "<group>"; };
 		E360E7092A8F36030057CE20 /* asm2-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "asm2-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E360E70C2A8F36030057CE20 /* asm2_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = asm2_iosApp.swift; sourceTree = "<group>"; };
 		E360E70E2A8F36030057CE20 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				E33A32992A93264200F98879 /* PokeCard.swift */,
+				E33A32AC2A93693B00F98879 /* PokeData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				E360E73A2A8F3A220057CE20 /* WelcomeView.swift in Sources */,
 				E33A32A92A934AE300F98879 /* TableView.swift in Sources */,
 				E33A32A12A9340CD00F98879 /* CardBack.swift in Sources */,
+				E33A32AD2A93693B00F98879 /* PokeData.swift in Sources */,
 				E360E7452A8F7CFD0057CE20 /* EmtyView.swift in Sources */,
 				E360E73F2A8F56DF0057CE20 /* Test.swift in Sources */,
 				E33A329A2A93264200F98879 /* PokeCard.swift in Sources */,

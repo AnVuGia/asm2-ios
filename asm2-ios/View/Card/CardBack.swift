@@ -8,16 +8,26 @@
 import SwiftUI
 
 struct CardBack: View {
+    var pokeCard : PokeCard
+    @Binding var isClick : Bool
     var body: some View {
-        Image("card-back")
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .frame(width: 70)
+        if (isClick){
+            PokeCardView(pokeCard: pokeCard)
+        }
+        else{
+            Image("card-back")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 70)
+                .onTapGesture {
+                    isClick.toggle()
+                }
+        }
     }
 }
 
 struct CardBack_Previews: PreviewProvider {
     static var previews: some View {
-        CardBack()
+        CardBack(pokeCard: PokeCard(name: "charizard", type: "Fire", imgName: "charizard", id: "1"), isClick: .constant(true))
     }
 }

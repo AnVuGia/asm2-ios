@@ -7,7 +7,7 @@
 
 import Foundation
 import SwiftUI
-class PokeCard {
+struct PokeCard : Decodable, Identifiable {
     var id : String
      var name : String
     var type : String
