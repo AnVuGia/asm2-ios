@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import SwiftUI
 class PokeCard {
     var id : String
      var name : String
@@ -17,5 +17,18 @@ class PokeCard {
         self.type = type
         self.imgName = imgName
         self.id = id
+    }
+    func getColorSets() -> [Color] {
+        if type == "Fire" {
+            return [Color.orange , Color.white, Color.orange]
+        } else if type == "Water" {
+            return [Color.blue, Color.white,Color.blue ]
+        } else if type == "Grass" {
+            return [Color.green, Color.green, Color.green]
+        }
+        else {
+            return [Color.yellow, Color.white, Color.yellow]
+            
+        }
     }
 }
