@@ -10,6 +10,9 @@
 		E33A32982A9324D100F98879 /* Main7x7View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33A32972A9324D100F98879 /* Main7x7View.swift */; };
 		E33A329A2A93264200F98879 /* PokeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33A32992A93264200F98879 /* PokeCard.swift */; };
 		E33A329C2A9327CE00F98879 /* PokeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33A329B2A9327CE00F98879 /* PokeCardView.swift */; };
+		E33A32A12A9340CD00F98879 /* CardBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33A32A02A9340CD00F98879 /* CardBack.swift */; };
+		E33A32A72A93488A00F98879 /* poke-data.json in Resources */ = {isa = PBXBuildFile; fileRef = E33A32A62A93488A00F98879 /* poke-data.json */; };
+		E33A32A92A934AE300F98879 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33A32A82A934AE300F98879 /* TableView.swift */; };
 		E360E70D2A8F36030057CE20 /* asm2_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360E70C2A8F36030057CE20 /* asm2_iosApp.swift */; };
 		E360E70F2A8F36030057CE20 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360E70E2A8F36030057CE20 /* ContentView.swift */; };
 		E360E7112A8F36040057CE20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E360E7102A8F36040057CE20 /* Assets.xcassets */; };
@@ -47,6 +50,9 @@
 		E33A32972A9324D100F98879 /* Main7x7View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main7x7View.swift; sourceTree = "<group>"; };
 		E33A32992A93264200F98879 /* PokeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeCard.swift; sourceTree = "<group>"; };
 		E33A329B2A9327CE00F98879 /* PokeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeCardView.swift; sourceTree = "<group>"; };
+		E33A32A02A9340CD00F98879 /* CardBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBack.swift; sourceTree = "<group>"; };
+		E33A32A62A93488A00F98879 /* poke-data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "poke-data.json"; sourceTree = "<group>"; };
+		E33A32A82A934AE300F98879 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		E360E7092A8F36030057CE20 /* asm2-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "asm2-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E360E70C2A8F36030057CE20 /* asm2_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = asm2_iosApp.swift; sourceTree = "<group>"; };
 		E360E70E2A8F36030057CE20 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -92,6 +98,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E33A329F2A93404300F98879 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				E33A329B2A9327CE00F98879 /* PokeCardView.swift */,
+				E33A32A02A9340CD00F98879 /* CardBack.swift */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
+		E33A32A22A93480B00F98879 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E33A32A62A93488A00F98879 /* poke-data.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		E360E7002A8F36030057CE20 = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +138,7 @@
 		E360E70B2A8F36030057CE20 /* asm2-ios */ = {
 			isa = PBXGroup;
 			children = (
+				E33A32A22A93480B00F98879 /* Data */,
 				E360E73B2A8F51EF0057CE20 /* UI */,
 				E360E7382A8F3A0A0057CE20 /* Model */,
 				E360E7372A8F3A010057CE20 /* View */,
@@ -155,10 +179,10 @@
 		E360E7372A8F3A010057CE20 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E33A329F2A93404300F98879 /* Card */,
 				E360E7392A8F3A220057CE20 /* WelcomeView.swift */,
 				E360E7422A8F71680057CE20 /* MainPageView.swift */,
 				E33A32972A9324D100F98879 /* Main7x7View.swift */,
-				E33A329B2A9327CE00F98879 /* PokeCardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -179,6 +203,7 @@
 				E360E7402A8F69DD0057CE20 /* ShiningView.swift */,
 				E360E7442A8F7CFD0057CE20 /* EmtyView.swift */,
 				E360E7462A8F7E7C0057CE20 /* TextButtonUI.swift */,
+				E33A32A82A934AE300F98879 /* TableView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -289,6 +314,7 @@
 			files = (
 				E360E7152A8F36040057CE20 /* Preview Assets.xcassets in Resources */,
 				E360E7112A8F36040057CE20 /* Assets.xcassets in Resources */,
+				E33A32A72A93488A00F98879 /* poke-data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +342,8 @@
 				E360E70F2A8F36030057CE20 /* ContentView.swift in Sources */,
 				E360E7432A8F71680057CE20 /* MainPageView.swift in Sources */,
 				E360E73A2A8F3A220057CE20 /* WelcomeView.swift in Sources */,
+				E33A32A92A934AE300F98879 /* TableView.swift in Sources */,
+				E33A32A12A9340CD00F98879 /* CardBack.swift in Sources */,
 				E360E7452A8F7CFD0057CE20 /* EmtyView.swift in Sources */,
 				E360E73F2A8F56DF0057CE20 /* Test.swift in Sources */,
 				E33A329A2A93264200F98879 /* PokeCard.swift in Sources */,

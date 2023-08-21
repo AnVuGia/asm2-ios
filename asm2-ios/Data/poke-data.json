@@ -1,0 +1,25 @@
+[{
+    "id" : "1",
+    "name": "charizard",
+    "imgName": "charizard",
+    "type" : "Fire"
+},
+    {
+        "id" : "2",
+        "name": "bulbasaur",
+        "imgName": "bulbasaur",
+        "type" : "Grass"
+    },
+    {
+        "id" : "3",
+        "name": "pikachu",
+        "imgName": "pikachu",
+        "type" : "Electric"
+    },
+    {
+        "id" : "4",
+        "name": "squirtle",
+        "imgName": "squirtle",
+        "type" : "Water"
+    }
+]

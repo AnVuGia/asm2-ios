@@ -20,14 +20,14 @@ class PokeCard {
     }
     func getColorSets() -> [Color] {
         if type == "Fire" {
-            return [Color.orange , Color.white, Color.orange]
+            return [Color.orange , Color.white, Color.orange , Color.red]
         } else if type == "Water" {
-            return [Color.blue, Color.white,Color.blue ]
+            return [Color.blue, Color.white,Color.blue, Color.blue ]
         } else if type == "Grass" {
-            return [Color.green, Color.green, Color.green]
+            return [Color.green, Color.white, Color.green, Color.green]
         }
         else {
-            return [Color.yellow, Color.white, Color.yellow]
+            return [Color.yellow, Color.white, Color.yellow, Color.yellow]
             
         }
     }

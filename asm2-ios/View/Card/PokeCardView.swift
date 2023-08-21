@@ -21,7 +21,7 @@ struct PokeCardView: View {
     var pokeCard : PokeCard
     @State private var isShining = false
     var body: some View {
-        var colorSets = pokeCard.getColorSets()
+        let colorSets = pokeCard.getColorSets()
         ZStack{
             Image(pokeCard.imgName)
                 .resizable()
@@ -34,15 +34,17 @@ struct PokeCardView: View {
                     Spacer()
                     ZStack {
                         ShiningView(isShining: $isShining, shineColor: .white, size: 40, shadowSize: 20)
-                        ShiningView(isShining: $isShining, shineColor: colorSets[0], size: 35, shadowSize: 15)
+                        ShiningView(isShining: $isShining, shineColor: colorSets[3], size: 45, shadowSize: 15)
                         Image(pokeCard.type)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 50)
-                            
+                            .background(.white)
+                            .clipShape(Circle())
                      
                     }
-                    .padding(.trailing , 10)
+                    .padding([.trailing ], 10)
+                    .padding([.top], 5)
                     .onAppear {
                         isShining = true
                     }
@@ -52,7 +54,7 @@ struct PokeCardView: View {
             Spacer()
         }
         .frame(width: 250, height: 350)
-        .background(LinearGradient(colors: [colorSets[0], colorSets[1], colorSets[2]], startPoint: .top , endPoint: .center))
+        .background(AngularGradient(colors: [colorSets[0], colorSets[1], colorSets[2], colorSets[1], colorSets[0]], center: .center, startAngle: .degrees(90), endAngle: .degrees(360)))
         .clipShape(RoundedRectangle(cornerRadius: 20))
         .padding([.leading, .trailing, .top, .bottom], 2)
         .background(Color.black)
@@ -63,6 +65,6 @@ struct PokeCardView: View {
 
 struct PokeCardView_Previews: PreviewProvider {
     static var previews: some View {
-        PokeCardView(pokeCard: PokeCard(name: "charizard", type: "Fire", imgName: "charizard", id: "1"))
+        PokeCardView(pokeCard: PokeCard(name: "charizard", type: "Grass", imgName: "charizard", id: "1"))
     }
 }
