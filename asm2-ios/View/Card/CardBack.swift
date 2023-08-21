@@ -19,10 +19,7 @@ struct CardBack: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 70)
-                .onTapGesture {
-                    isClick.toggle()
                 }
-        }
     }
 }
 
