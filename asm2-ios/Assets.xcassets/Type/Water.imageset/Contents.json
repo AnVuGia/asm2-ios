@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "water-orb.png",
+      "filename" : "shard_01c.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "water-orb@2x.png",
+      "filename" : "shard_01c@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "water-orb@3x.png",
+      "filename" : "shard_01c@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

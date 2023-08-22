@@ -28,6 +28,8 @@
 		E360E7432A8F71680057CE20 /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360E7422A8F71680057CE20 /* MainPageView.swift */; };
 		E360E7452A8F7CFD0057CE20 /* EmtyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360E7442A8F7CFD0057CE20 /* EmtyView.swift */; };
 		E360E7472A8F7E7C0057CE20 /* TextButtonUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360E7462A8F7E7C0057CE20 /* TextButtonUI.swift */; };
+		E3AE35372A94777D00B57D93 /* ComboBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AE35362A94777D00B57D93 /* ComboBar.swift */; };
+		E3AE35392A94865900B57D93 /* ComboBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AE35382A94865900B57D93 /* ComboBarModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		E360E7422A8F71680057CE20 /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
 		E360E7442A8F7CFD0057CE20 /* EmtyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmtyView.swift; sourceTree = "<group>"; };
 		E360E7462A8F7E7C0057CE20 /* TextButtonUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButtonUI.swift; sourceTree = "<group>"; };
+		E3AE35362A94777D00B57D93 /* ComboBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComboBar.swift; sourceTree = "<group>"; };
+		E3AE35382A94865900B57D93 /* ComboBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComboBarModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +144,7 @@
 		E360E70B2A8F36030057CE20 /* asm2-ios */ = {
 			isa = PBXGroup;
 			children = (
+				E3AE35352A94776300B57D93 /* Component */,
 				E33A32A22A93480B00F98879 /* Data */,
 				E360E73B2A8F51EF0057CE20 /* UI */,
 				E360E7382A8F3A0A0057CE20 /* Model */,
@@ -194,6 +199,7 @@
 			children = (
 				E33A32992A93264200F98879 /* PokeCard.swift */,
 				E33A32AC2A93693B00F98879 /* PokeData.swift */,
+				E3AE35382A94865900B57D93 /* ComboBarModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -206,9 +212,17 @@
 				E360E7402A8F69DD0057CE20 /* ShiningView.swift */,
 				E360E7442A8F7CFD0057CE20 /* EmtyView.swift */,
 				E360E7462A8F7E7C0057CE20 /* TextButtonUI.swift */,
-				E33A32A82A934AE300F98879 /* TableView.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		E3AE35352A94776300B57D93 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				E33A32A82A934AE300F98879 /* TableView.swift */,
+				E3AE35362A94777D00B57D93 /* ComboBar.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,10 +366,12 @@
 				E360E73F2A8F56DF0057CE20 /* Test.swift in Sources */,
 				E33A329A2A93264200F98879 /* PokeCard.swift in Sources */,
 				E33A32AB2A9352C700F98879 /* MainNormalView.swift in Sources */,
+				E3AE35392A94865900B57D93 /* ComboBarModel.swift in Sources */,
 				E360E7472A8F7E7C0057CE20 /* TextButtonUI.swift in Sources */,
 				E360E70D2A8F36030057CE20 /* asm2_iosApp.swift in Sources */,
 				E33A329C2A9327CE00F98879 /* PokeCardView.swift in Sources */,
 				E360E73D2A8F52250057CE20 /* ButtonUI.swift in Sources */,
+				E3AE35372A94777D00B57D93 /* ComboBar.swift in Sources */,
 				E360E7412A8F69DD0057CE20 /* ShiningView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

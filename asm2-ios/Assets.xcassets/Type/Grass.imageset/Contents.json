@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "orb_spring.png",
+      "filename" : "shard_01a.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "orb_spring@2x.png",
+      "filename" : "shard_01a@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "orb_spring@3x.png",
+      "filename" : "shard_01a@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

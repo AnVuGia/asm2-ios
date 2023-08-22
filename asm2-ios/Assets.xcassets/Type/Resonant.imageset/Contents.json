@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "shard_01b.png",
+      "filename" : "gem_01b.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "shard_01b@2x.png",
+      "filename" : "gem_01b@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "shard_01b@3x.png",
+      "filename" : "gem_01b@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

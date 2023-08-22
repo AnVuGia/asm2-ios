@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "shard_01b.png",
+      "filename" : "Screenshot 2023-08-22 at 12.11.21.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "shard_01b@2x.png",
+      "filename" : "Screenshot 2023-08-22 at 12.11.21@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "shard_01b@3x.png",
+      "filename" : "Screenshot 2023-08-22 at 12.11.21@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
