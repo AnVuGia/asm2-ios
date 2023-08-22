@@ -59,42 +59,45 @@ struct TableView: View {
     }
     func onFlipCard(row: Int, column: Int) {
         print("\(row) , \(column)")
-        // Check if the selected card is already flipped
-        if (isClicks[row][column]) {
+        
+        // Check if the selected card is already flipped or if clickCount exceeds 2
+        if isClicks[row][column] || clickCount >= 2 {
             print("Return")
             return
         }
-            print("Flip")
-            // Toggle the card's state
-            isClicks[row][column].toggle()
-          
-            // Store the selected card's position
-            playerCurrentCards[clickCount] = [row, column]
-            clickCount += 1
-            //        print("\(clickCount)")
-            if clickCount == 2 {
-                //set time out
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
-                    //check matching card
-                    if checkSameCard() {
-                        print("\(true)")
-                        discardCard.append(cards[row][column])
-                    } else {
-                        // Cards don't match, flip them back
-                        for index in 0..<2 {
-                            let temp = playerCurrentCards[index]
-                            let tempRow = temp[0]
-                            let tempColumn = temp[1]
-                            isClicks[tempRow][tempColumn].toggle()
-                        }
+        
+        print("Flip")
+        
+        // Toggle the card's state
+        isClicks[row][column].toggle()
+        
+        // Store the selected card's position
+        playerCurrentCards[clickCount] = [row, column]
+        clickCount += 1
+        
+        if clickCount == 2 {
+            // Set timeout
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
+                // Check matching cards
+                if self.checkSameCard() {
+                    print("\(true)")
+                    discardCard.append(cards[row][column])
+                } else {
+                    // Cards don't match, flip them back
+                    for index in 0..<2 {
+                        let temp = playerCurrentCards[index]
+                        let tempRow = temp[0]
+                        let tempColumn = temp[1]
+                        isClicks[tempRow][tempColumn].toggle()
                     }
-                    // Reset the click count
-                    clickCount = 0
-
                 }
-            
-                    }
+                
+                // Reset the click count
+                clickCount = 0
+            }
+        }
     }
+
 
     func checkSameCard() -> Bool {
         let card1 = playerCurrentCards[0]
