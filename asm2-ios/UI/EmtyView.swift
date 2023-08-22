@@ -9,7 +9,10 @@ import SwiftUI
 
 struct EmtyView: View {
     var body: some View {
-        Text("")
+        Button(""){
+            
+        }.frame(width: 70, height: 100)
+            
     }
 }
 
