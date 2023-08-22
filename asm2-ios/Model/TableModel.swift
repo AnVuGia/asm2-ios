@@ -17,12 +17,14 @@ class TableModel: ObservableObject {
     @Published  var playerCurrentCards : [[Int]]
     @Published  var discardCard : [Int] = []
     @Published  var comboBarModel : CombobarModel
+    @Published var isDone = false
     init() {
             self.isClicks = Array(repeating: Array(repeating: false, count: 5), count: 4)
             self.cards = Array(repeating: Array(repeating: 0, count: 5), count: 4)
             self.clickCount = 0
             self.playerCurrentCards = Array(repeating: Array(repeating: -1, count: 2), count: 2)
             self.comboBarModel = CombobarModel()
+            self.createTableData(row: 4, column: 5)
         }
     func createTableData(row: Int, column: Int) {
         var array : [Int] = [0,0,1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9]
@@ -30,6 +32,7 @@ class TableModel: ObservableObject {
             for colNo in 0..<column{
                 let randomNumber = Int.random(in: 0..<array.count)
                 self.cards[rowNo][colNo] = array[randomNumber]
+                self.isClicks[rowNo][colNo] = false
                 array.remove(at: randomNumber)
                 
             }
@@ -62,6 +65,10 @@ class TableModel: ObservableObject {
                     let pokemon = pokemonData[self.cards[row][column]]
                     self.comboBarModel.addCombo(element: pokemon.type)
                     self.discardCard.append(self.cards[row][column])
+                    if(self.discardCard.count == 2){
+                        self.isDone = true
+                        print("in table model done \(self.isDone)")
+                    }
                 } else {
                     // Cards don't match, flip them back
                     for index in 0..<2 {
@@ -99,5 +106,14 @@ class TableModel: ObservableObject {
     }
     func attachComboBar(targetComboBar: CombobarModel){
         self.comboBarModel = targetComboBar
+    }
+    func playAgain() {
+        self.discardCard = []
+        for i in 0..<3{
+            playerCurrentCards[i] = []
+        }
+        clickCount = 0
+        isDone = false
+        createTableData(row: row, column: column)
     }
 }

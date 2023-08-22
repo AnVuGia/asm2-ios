@@ -2,7 +2,9 @@ import SwiftUI
 
 struct TableView: View {
     @ObservedObject var tableModel: TableModel
-    
+    init(tableModel: TableModel) {
+        self.tableModel = tableModel
+    }
     var body: some View {
         VStack {
             ForEach(0..<4) { rowIndex in
@@ -27,9 +29,6 @@ struct TableView: View {
                     }
                 }
             }
-        }
-        .onAppear {
-            tableModel.createTableData(row: 4, column: 5)
         }
     }
 }

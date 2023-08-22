@@ -12,12 +12,16 @@ class GameSystem : ObservableObject {
     @Published var pointBoardModel = PointCalculatorModel()
     @Published var comboBarModel = CombobarModel()
     @Published var table = TableModel()
-    
     init() {
         self.comboBarModel.attachPointBoard(targetPointBoard: pointBoardModel)
         self.table.attachComboBar(targetComboBar: comboBarModel)
     }
-    
+    func playAgain(){
+        self.table = TableModel()
+        table.attachComboBar(targetComboBar: comboBarModel)
+        self.table.isDone = false
+    }
+   
 }
 
 

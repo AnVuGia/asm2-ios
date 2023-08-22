@@ -9,13 +9,27 @@ import SwiftUI
 
 struct MainNormalView: View {
         @ObservedObject var gameSystem = GameSystem()
+        @ObservedObject var table = TableModel()
+    init() {
+        self.table = gameSystem.table
+    }
         var body: some View {
         ZStack {
+            
             Image("background7x7")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .ignoresSafeArea()
             VStack {
+                if(table.isDone){
+                    Button("Play again"){
+                        gameSystem.playAgain()
+                    }
+                    
+                } else {
+                    Text("Is playing")
+                }
+                
                 TableView(tableModel: gameSystem.table)
                 ComboBar(comboBarModel: gameSystem.comboBarModel)
                     .padding(.top, 5)
