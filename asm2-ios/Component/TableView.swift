@@ -1,50 +1,36 @@
-//
-//  TableView.swift
-//  asm2-ios
-//
-//  Created by An Vu Gia on 21/08/2023.
-//
-
 import SwiftUI
 
 struct TableView: View {
-    let row = 4
-    let column = 5
     @ObservedObject var tableModel = TableModel()
     var body: some View {
-        let rowCount = 0..<row
-        let columnCount = 0..<column
         VStack {
-            ForEach(rowCount, id: \.self) { row in
-                HStack {
-                    ForEach(columnCount, id: \.self) { column in
-                        let index = tableModel.cards[row][column]
-                        if index >= 0 && index < pokemonData.count {
-                            Button {
-                                tableModel.onFlipCard(row: row, column: column)
-                            } label: {
-                                if tableModel.isClicks[row][column] && tableModel.discardCard.contains(tableModel.cards[row][column]) {
-                                    EmtyView()
-                                } else {
-                                    CardBack(pokeCard: pokemonData[index], isClick: tableModel.$isClicks[row][column])
-                                }                            }
+            ForEach(0..<tableModel.row) {rowIndex in
+                HStack{
+                    ForEach(0..<tableModel.column){ columnIndex in
+                        if(tableModel.checkDone(row: rowIndex, column: columnIndex)){
+                            EmtyView()
                         } else {
-                            Text("Invalid Index")
+                            Button {
+                                tableModel.onFlipCard(row: rowIndex, column: columnIndex)
+                            } label: {
+                                let index = tableModel.cards[rowIndex][columnIndex]
+                                @State var isClickTemp = tableModel.isClicks[rowIndex][columnIndex]
+                                CardBack(pokeCard: pokemonData[index], isClick: $isClickTemp)
+                            }
+
                         }
                         
                     }
                 }
             }
         }.onAppear {
+            tableModel.createTableData(row: 4, column: 5)
         }
     }
-    //
-    
 }
-    
-    struct TableView_Previews: PreviewProvider {
-        static var previews: some View {
-            TableView()
-        }
-    }
 
+struct TableView_Previews: PreviewProvider {
+    static var previews: some View {
+        TableView()
+    }
+}

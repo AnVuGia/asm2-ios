@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 
 class TableModel: ObservableObject {
+    let row  = 4
+    let column = 5
     @Published  var cards : [[Int]]
     @Published  var isClicks : [[Bool]]
     @Published  var clickCount : Int
@@ -26,7 +28,7 @@ class TableModel: ObservableObject {
         for rowNo in 0..<row {
             for colNo in 0..<column{
                 let randomNumber = Int.random(in: 0..<array.count)
-                cards[rowNo][colNo] = array[randomNumber]
+                self.cards[rowNo][colNo] = array[randomNumber]
                 array.remove(at: randomNumber)
                 
             }
@@ -85,5 +87,11 @@ class TableModel: ObservableObject {
             return false
 
         }
+    }
+    func checkDone(row: Int, column: Int) -> Bool {
+        if(isClicks[row][column] && discardCard.contains(cards[row][column])){
+            return true
+        }
+        return false
     }
 }
