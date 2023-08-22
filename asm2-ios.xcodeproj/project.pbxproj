@@ -85,7 +85,8 @@
 		E3AE353C2A94AA5400B57D93 /* GameSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSystem.swift; sourceTree = "<group>"; };
 		E3AE353E2A94AB8300B57D93 /* PointCalculatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointCalculatorModel.swift; sourceTree = "<group>"; };
 		E3AE35402A94AC9800B57D93 /* PointBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointBoard.swift; sourceTree = "<group>"; };
-		E3AE35422A94B05C00B57D93 /* Silver.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Silver.ttf; sourceTree = "<group>"; };
+		E3AE35432A94B57F00B57D93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E3AE35442A94BAEF00B57D93 /* Silver.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Silver.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,7 +154,8 @@
 		E360E70B2A8F36030057CE20 /* asm2-ios */ = {
 			isa = PBXGroup;
 			children = (
-				E3AE35422A94B05C00B57D93 /* Silver.ttf */,
+				E3AE35432A94B57F00B57D93 /* Info.plist */,
+				E3AE35442A94BAEF00B57D93 /* Silver.ttf */,
 				E3AE35352A94776300B57D93 /* Component */,
 				E33A32A22A93480B00F98879 /* Data */,
 				E360E73B2A8F51EF0057CE20 /* UI */,
@@ -547,6 +549,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"asm2-ios/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "asm2-ios/Info.plist";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -583,6 +586,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"asm2-ios/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "asm2-ios/Info.plist";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

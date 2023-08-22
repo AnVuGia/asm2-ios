@@ -7,8 +7,9 @@
 
 import SwiftUI
 
+
 struct PointBoard: View {
-    @ObservedObject private var pointModel = PointCalculatorModel()
+    @ObservedObject  var pointModel : PointCalculatorModel
     var body: some View {
         VStack {
             ZStack {
@@ -18,15 +19,16 @@ struct PointBoard: View {
                 Text("\(pointModel.currentPoints)")
                     .foregroundColor(Color.white)
             }.frame(width: 130)
-//            Button("click"){
-//                pointModel.addPoints(points: 200, multiplier: 10)
-//            }
+           Button("click"){
+               pointModel.addPoints(points: 200, multiplier: 3)
+
+          }
         }
     }
 }
 
 struct PointBoard_Previews: PreviewProvider {
     static var previews: some View {
-        PointBoard()
+        PointBoard(pointModel: PointCalculatorModel())
     }
 }

@@ -16,13 +16,13 @@ class TableModel: ObservableObject {
     @Published  var clickCount : Int
     @Published  var playerCurrentCards : [[Int]]
     @Published  var discardCard : [Int] = []
-    @Published  var comboBarModel = CombobarModel()
-    
+    @Published  var comboBarModel : CombobarModel
     init() {
             self.isClicks = Array(repeating: Array(repeating: false, count: 5), count: 4)
             self.cards = Array(repeating: Array(repeating: 0, count: 5), count: 4)
             self.clickCount = 0
             self.playerCurrentCards = Array(repeating: Array(repeating: -1, count: 2), count: 2)
+            self.comboBarModel = CombobarModel()
         }
     func createTableData(row: Int, column: Int) {
         var array : [Int] = [0,0,1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9]
@@ -96,5 +96,8 @@ class TableModel: ObservableObject {
             return true
         }
         return false
+    }
+    func attachComboBar(targetComboBar: CombobarModel){
+        self.comboBarModel = targetComboBar
     }
 }

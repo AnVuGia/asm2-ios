@@ -8,13 +8,19 @@
 import SwiftUI
 
 struct MainNormalView: View {
-    var body: some View {
+        @ObservedObject var gameSystem = GameSystem()
+        var body: some View {
         ZStack {
             Image("background7x7")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .ignoresSafeArea()
-            TableView()
+            VStack {
+                TableView(tableModel: gameSystem.table)
+                ComboBar(comboBarModel: gameSystem.comboBarModel)
+                    .padding(.top, 5)
+                PointBoard(pointModel: gameSystem.pointBoardModel)
+            }
         }
     }
 }

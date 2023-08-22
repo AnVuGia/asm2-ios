@@ -8,6 +8,7 @@
 import SwiftUI
 
 @main
+
 struct asm2_iosApp: App {
     var body: some Scene {
         WindowGroup {

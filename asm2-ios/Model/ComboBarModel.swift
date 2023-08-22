@@ -11,6 +11,14 @@ class CombobarModel: ObservableObject {
     @Published var currentCombo : [String] = []
     @Published  var isResonent : Bool = false
     @Published  var isChaos : Bool =  false
+    @Published var pointBoard : PointCalculatorModel
+    private let basePoints = 200
+    init() {
+        self.currentCombo = []
+        self.isResonent = false
+        self.isChaos = false
+        self.pointBoard = PointCalculatorModel()
+    }
     let colors: [String:Color] = [
         "Fire": Color.red,
         "Water": Color.blue,
@@ -20,8 +28,10 @@ class CombobarModel: ObservableObject {
     ]
     func addCombo(element: String) {
         currentCombo.append(element)
+        let multiplier = checkCombo()
         print("count: \(currentCombo.count)")
-        if(checkCombo() >= 1){
+        pointBoard.addPoints(points: basePoints, multiplier: multiplier)
+        if(multiplier >= 2){
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.clearCombo()
             }
@@ -32,26 +42,29 @@ class CombobarModel: ObservableObject {
             if(isChaos && isResonent){
                 isChaos = false
                 isResonent = false
-                return 3
+                return 4
             }
             
             if(areAllStringsEqual(in: currentCombo)){
                 isResonent = true
-                return 2
+                return 3
             } else if (areAllStringsUnique(in: currentCombo)){
                 isChaos = true
-                return 2
+                return 3
             } else {
                 if isChaos {isResonent = true}
                 else if isResonent {isChaos = true}
                 else {isChaos = true}
-                return 1
+                return 2
             }
         }
-        return 0
+        return 1
     }
     func clearCombo(){
         currentCombo.removeAll()
+    }
+    func attachPointBoard(targetPointBoard: PointCalculatorModel) {
+        self.pointBoard = targetPointBoard
     }
 }
 func areAllStringsEqual(in array: [String]) -> Bool {

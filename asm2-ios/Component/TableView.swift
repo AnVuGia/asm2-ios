@@ -2,9 +2,8 @@ import SwiftUI
 
 struct TableView: View {
 
-    @ObservedObject var tableModel = TableModel()
+    @ObservedObject var tableModel : TableModel
     var body: some View {
-        @ObservedObject var comboBar = tableModel.comboBarModel
         VStack {
             ForEach(0..<tableModel.row) {rowIndex in
                 HStack{
@@ -25,13 +24,7 @@ struct TableView: View {
                     }
                 }
             }
-            HStack {
-                Spacer()
-                ComboBar(comboBarModel: comboBar)
-                    .padding([.leading, .top], 10)
-                Spacer()
-            }
-        }.onAppear {
+            }.onAppear {
             tableModel.createTableData(row: 4, column: 5)
         }
     }
@@ -39,6 +32,7 @@ struct TableView: View {
 
 struct TableView_Previews: PreviewProvider {
     static var previews: some View {
-        TableView()
+        
+        TableView(tableModel:  TableModel())
     }
 }

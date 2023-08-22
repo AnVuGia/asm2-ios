@@ -68,6 +68,7 @@ struct ComboBar: View {
 
 struct ComboBar_Previews: PreviewProvider {
     static var previews: some View {
+        var pointBoard = PointCalculatorModel()
         @State var comboBar = CombobarModel()
         ComboBar(comboBarModel: comboBar)
     }
