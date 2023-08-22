@@ -8,42 +8,40 @@
 import SwiftUI
 
 struct ComboBar: View {
-    @State private var currentCombo : [String] = ["Fire", "Water"]
-    @State private var isResonent : Bool = false
-    @State private var isChaos : Bool =  false
-    @State private var isShining: Bool = false
-    private let colors: [String:Color] = [
-        "Fire": Color.red,
-        "Water": Color.blue,
-        "Grass": Color.green,
-        "Chaos": Color.purple,
-        "Resonent": Color.yellow
-    ]
-    var body: some View {
-        ZStack {
-                Image("combo-bar")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 150
-                    )
-            HStack {
-                ForEach(currentCombo, id: \.self){ item in
-                    ZStack {
-                        if let shine = colors[item] {
-                            ShiningView(isShining: $isShining, shineColor: shine , size: 30, shadowSize: 15)
+        @ObservedObject private var comboBarModel = CombobarModel()
+        @State private var isShining: Bool = false
+
+        var body: some View {
+            VStack {
+                ZStack {
+                    Image("combo-bar")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 150
+                        )
+                HStack {
+                    ForEach(comboBarModel.currentCombo, id: \.self){ item in
+                        ZStack {
+                            if let shine = comboBarModel.colors[item] {
+                                ShiningView(isShining: $isShining, shineColor: shine , size: 30, shadowSize: 15)
+                            }
+                            Image(item)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                            .frame(width: 30)
                         }
-                        Image(item)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                        .frame(width: 30)
-                    }
-                }.padding([.leading], 5)
-               
-            }.frame(width: 130 , alignment: .leading)
-        }.onAppear{
-            isShining = true
+                    }.padding([.leading], 5)
+                   
+                }.frame(width: 130 , alignment: .leading)
+            }.onAppear{
+                isShining = true
         }
-        
+                Button("Click") {
+                    print("Click")
+                    comboBarModel.addCombo(element: "Fire")
+                }
+            }
+           
     }
 }
 
