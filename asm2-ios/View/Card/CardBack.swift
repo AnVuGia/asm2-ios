@@ -15,10 +15,14 @@ struct CardBack: View {
             PokeCardView(pokeCard: pokeCard)
         }
         else{
-            Image("card-back")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 70)
+            ZStack {
+                Image("card-back")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                .frame(width: 70, height: 90)
+                Text("\(pokeCard.name)")
+                    .foregroundColor(Color.white)
+            }
                 }
     }
 }

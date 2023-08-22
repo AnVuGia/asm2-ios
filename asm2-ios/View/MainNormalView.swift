@@ -21,6 +21,7 @@ struct MainNormalView: View {
                     .padding(.top, 5)
                 PointBoard(pointModel: gameSystem.pointBoardModel)
             }.padding()
+                .background(Color.red)
         }
     }
 }
