@@ -31,6 +31,9 @@
 		E3AE35372A94777D00B57D93 /* ComboBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AE35362A94777D00B57D93 /* ComboBar.swift */; };
 		E3AE35392A94865900B57D93 /* ComboBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AE35382A94865900B57D93 /* ComboBarModel.swift */; };
 		E3AE353B2A948A1900B57D93 /* TableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AE353A2A948A1900B57D93 /* TableModel.swift */; };
+		E3AE353D2A94AA5400B57D93 /* GameSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AE353C2A94AA5400B57D93 /* GameSystem.swift */; };
+		E3AE353F2A94AB8300B57D93 /* PointCalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AE353E2A94AB8300B57D93 /* PointCalculatorModel.swift */; };
+		E3AE35412A94AC9800B57D93 /* PointBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AE35402A94AC9800B57D93 /* PointBoard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +82,10 @@
 		E3AE35362A94777D00B57D93 /* ComboBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComboBar.swift; sourceTree = "<group>"; };
 		E3AE35382A94865900B57D93 /* ComboBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComboBarModel.swift; sourceTree = "<group>"; };
 		E3AE353A2A948A1900B57D93 /* TableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableModel.swift; sourceTree = "<group>"; };
+		E3AE353C2A94AA5400B57D93 /* GameSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSystem.swift; sourceTree = "<group>"; };
+		E3AE353E2A94AB8300B57D93 /* PointCalculatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointCalculatorModel.swift; sourceTree = "<group>"; };
+		E3AE35402A94AC9800B57D93 /* PointBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointBoard.swift; sourceTree = "<group>"; };
+		E3AE35422A94B05C00B57D93 /* Silver.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Silver.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +153,7 @@
 		E360E70B2A8F36030057CE20 /* asm2-ios */ = {
 			isa = PBXGroup;
 			children = (
+				E3AE35422A94B05C00B57D93 /* Silver.ttf */,
 				E3AE35352A94776300B57D93 /* Component */,
 				E33A32A22A93480B00F98879 /* Data */,
 				E360E73B2A8F51EF0057CE20 /* UI */,
@@ -203,6 +211,8 @@
 				E33A32AC2A93693B00F98879 /* PokeData.swift */,
 				E3AE35382A94865900B57D93 /* ComboBarModel.swift */,
 				E3AE353A2A948A1900B57D93 /* TableModel.swift */,
+				E3AE353C2A94AA5400B57D93 /* GameSystem.swift */,
+				E3AE353E2A94AB8300B57D93 /* PointCalculatorModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -224,6 +234,7 @@
 			children = (
 				E33A32A82A934AE300F98879 /* TableView.swift */,
 				E3AE35362A94777D00B57D93 /* ComboBar.swift */,
+				E3AE35402A94AC9800B57D93 /* PointBoard.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -360,6 +371,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E360E70F2A8F36030057CE20 /* ContentView.swift in Sources */,
+				E3AE35412A94AC9800B57D93 /* PointBoard.swift in Sources */,
+				E3AE353D2A94AA5400B57D93 /* GameSystem.swift in Sources */,
 				E360E7432A8F71680057CE20 /* MainPageView.swift in Sources */,
 				E360E73A2A8F3A220057CE20 /* WelcomeView.swift in Sources */,
 				E33A32A92A934AE300F98879 /* TableView.swift in Sources */,
@@ -372,6 +385,7 @@
 				E33A32AB2A9352C700F98879 /* MainNormalView.swift in Sources */,
 				E3AE35392A94865900B57D93 /* ComboBarModel.swift in Sources */,
 				E360E7472A8F7E7C0057CE20 /* TextButtonUI.swift in Sources */,
+				E3AE353F2A94AB8300B57D93 /* PointCalculatorModel.swift in Sources */,
 				E360E70D2A8F36030057CE20 /* asm2_iosApp.swift in Sources */,
 				E33A329C2A9327CE00F98879 /* PokeCardView.swift in Sources */,
 				E360E73D2A8F52250057CE20 /* ButtonUI.swift in Sources */,

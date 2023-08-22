@@ -16,6 +16,7 @@ class TableModel: ObservableObject {
     @Published  var clickCount : Int
     @Published  var playerCurrentCards : [[Int]]
     @Published  var discardCard : [Int] = []
+    @Published  var comboBarModel = CombobarModel()
     
     init() {
             self.isClicks = Array(repeating: Array(repeating: false, count: 5), count: 4)
@@ -54,10 +55,12 @@ class TableModel: ObservableObject {
         
         if clickCount == 2 {
             // Set timeout
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 // Check matching cards
                 if self.checkSameCard() {
                     print("\(true)")
+                    let pokemon = pokemonData[self.cards[row][column]]
+                    self.comboBarModel.addCombo(element: pokemon.type)
                     self.discardCard.append(self.cards[row][column])
                 } else {
                     // Cards don't match, flip them back

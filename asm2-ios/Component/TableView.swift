@@ -1,8 +1,10 @@
 import SwiftUI
 
 struct TableView: View {
+
     @ObservedObject var tableModel = TableModel()
     var body: some View {
+        @ObservedObject var comboBar = tableModel.comboBarModel
         VStack {
             ForEach(0..<tableModel.row) {rowIndex in
                 HStack{
@@ -22,6 +24,12 @@ struct TableView: View {
                         
                     }
                 }
+            }
+            HStack {
+                Spacer()
+                ComboBar(comboBarModel: comboBar)
+                    .padding([.leading, .top], 10)
+                Spacer()
             }
         }.onAppear {
             tableModel.createTableData(row: 4, column: 5)
