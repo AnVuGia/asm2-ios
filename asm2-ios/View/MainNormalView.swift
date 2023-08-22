@@ -20,7 +20,7 @@ struct MainNormalView: View {
                 ComboBar(comboBarModel: gameSystem.comboBarModel)
                     .padding(.top, 5)
                 PointBoard(pointModel: gameSystem.pointBoardModel)
-            }
+            }.padding()
         }
     }
 }

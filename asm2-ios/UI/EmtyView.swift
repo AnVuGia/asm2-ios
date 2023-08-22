@@ -11,7 +11,7 @@ struct EmtyView: View {
     var body: some View {
         Button(""){
             
-        }.frame(width: 70, height: 100)
+        }.frame(width: 70, height: 90)
             
     }
 }
