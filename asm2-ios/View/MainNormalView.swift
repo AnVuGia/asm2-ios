@@ -10,7 +10,7 @@ import SwiftUI
 struct MainNormalView: View {
     @ObservedObject var gameSystem = GameSystem()
     @ObservedObject var table = TableModel()
-    @ObservedObject var timerModel = TimerModel(timerCount: 5)
+    @ObservedObject var timerModel = TimerModel(timerCount: 100)
     @State var currentRound = 1
     init() {
         self.table = gameSystem.table
@@ -27,6 +27,7 @@ struct MainNormalView: View {
             VStack {
                 HStack {
                     Text("Round \(currentRound)")
+                    Spacer()
                     CountdownTimerView(timerModel: gameSystem.timerModel)
                         .onReceive(gameSystem.timerModel.timer) { _ in
                             if gameSystem.timerModel.timerIsRunning && gameSystem.timerModel.remainingTime > 0 {
@@ -36,7 +37,7 @@ struct MainNormalView: View {
                                 }
                             }
                         }
-                }
+                }.frame(width: UIScreen.main.bounds.width-50)
                     TableView(tableModel: gameSystem.table)
                     ComboBar(comboBarModel: gameSystem.comboBarModel)
                         .padding(.top, 5)

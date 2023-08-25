@@ -4,11 +4,8 @@ struct CountdownTimerView: View {
     @ObservedObject var timerModel : TimerModel
     var body: some View {
         VStack {
-            Text("Countdown Timer")
-                .font(.largeTitle)
-
             Text("\(timeString(timerModel.remainingTime))")
-                .font(.system(size: 60))
+                .font(.system(size: 30))
                 .foregroundColor(timerModel.timerIsRunning ? .red : .black)
 
             
@@ -25,7 +22,7 @@ struct CountdownTimerView: View {
 
 struct CountdownTimerView_Previews: PreviewProvider {
     static var previews: some View {
-        var timerModel = TimerModel(timerCount: 10)
+        let timerModel = TimerModel(timerCount: 10)
         CountdownTimerView(timerModel: timerModel)
     }
 }

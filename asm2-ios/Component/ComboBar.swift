@@ -12,7 +12,6 @@ struct ComboBar: View {
         @State private var isShining: Bool = false
         
         var body: some View {
-            let test = ["Fire", "Water", "Grass"]
             VStack {
                 HStack {
                     if(comboBarModel.isResonent){

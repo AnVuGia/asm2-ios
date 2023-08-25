@@ -17,6 +17,9 @@ struct PlayAgainView: View {
                     .opacity(0.7)
 
                 VStack {
+                    Text("GAME OVER")
+                        .foregroundColor(Color.white)
+                        .font(.largeTitle)
                     Text("Your score: \(score)")
                         .foregroundColor(Color.white)
                     Text("You place: ")
