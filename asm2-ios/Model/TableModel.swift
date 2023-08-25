@@ -18,6 +18,8 @@ class TableModel: ObservableObject {
     @Published  var discardCard : [Int] = []
     @Published  var comboBarModel : CombobarModel
     @Published var isDone = false
+    @Published var timerModel = TimerModel(timerCount: 10)
+    private let timer = 10
     init() {
             self.isClicks = Array(repeating: Array(repeating: false, count: 5), count: 4)
             self.cards = Array(repeating: Array(repeating: 0, count: 5), count: 4)
@@ -51,7 +53,7 @@ class TableModel: ObservableObject {
         
         // Toggle the card's state
         isClicks[row][column].toggle()
-        
+        timerModel.start()
         // Store the selected card's position
         playerCurrentCards[clickCount] = [row, column]
         clickCount += 1
@@ -114,5 +116,8 @@ class TableModel: ObservableObject {
         clickCount = 0
         isDone = false
         createTableData(row: row, column: column)
+    }
+    func attachTimer(timerModel : TimerModel) {
+        self.timerModel = timerModel
     }
 }

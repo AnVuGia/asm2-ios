@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct MainNormalView: View {
-        @ObservedObject var gameSystem = GameSystem()
-        @ObservedObject var table = TableModel()
-        @State var currrentRound = 1
+    @ObservedObject var gameSystem = GameSystem()
+    @ObservedObject var table = TableModel()
+    @ObservedObject var timerModel = TimerModel(timerCount: 5)
+    @State var currentRound = 1
     init() {
         self.table = gameSystem.table
+        gameSystem.attachTimerModel(timerModel: timerModel)
+        
     }
-        var body: some View {
+    var body: some View {
         ZStack {
             
             Image("background7x7")
@@ -22,32 +25,48 @@ struct MainNormalView: View {
                 .aspectRatio(contentMode: .fill)
                 .ignoresSafeArea()
             VStack {
-                TableView(tableModel: gameSystem.table)
-                ComboBar(comboBarModel: gameSystem.comboBarModel)
-                    .padding(.top, 5)
-                PointBoard(pointModel: gameSystem.pointBoardModel)
-            }.padding()
-            if(table.isDone){
-                if(currrentRound <= 3){
-                    Button("Next Round") {
-                        gameSystem.playAgain()
-                        currrentRound+=1
-                        table.isDone = false
-                    }.background(Color.white)
-                } else {
+                HStack {
+                    Text("Round \(currentRound)")
+                    CountdownTimerView(timerModel: gameSystem.timerModel)
+                        .onReceive(gameSystem.timerModel.timer) { _ in
+                            if gameSystem.timerModel.timerIsRunning && gameSystem.timerModel.remainingTime > 0 {
+                                gameSystem.timerModel.remainingTime -= 1
+                                if(gameSystem.timerModel.remainingTime == 0) {
+                                    gameSystem.timerModel.isOver = true
+                                }
+                            }
+                        }
+                }
+                    TableView(tableModel: gameSystem.table)
+                    ComboBar(comboBarModel: gameSystem.comboBarModel)
+                        .padding(.top, 5)
+                    PointBoard(pointModel: gameSystem.pointBoardModel)
+                }.padding()
+                if(table.isDone){
+                    if(currentRound <= 3){
+                        Button("Next Round") {
+                            gameSystem.playAgain()
+                            currentRound+=1
+                            table.isDone = false
+                        }.background(Color.white)
+                    }
+                    else {
+                        PlayAgainView(score: gameSystem.pointBoardModel.currentPoints)
+                    }
+                }
+                if (gameSystem.timerModel.isOver){
                     PlayAgainView(score: gameSystem.pointBoardModel.currentPoints)
                 }
+            
                 
             }
+            .navigationBarBackButtonHidden(true)
+            .navigationBarHidden(true)
             
         }
-        .navigationBarBackButtonHidden(true)
-            .navigationBarHidden(true)
-
+        
+        
     }
-       
-
-}
 
 struct MainNormalView_Previews: PreviewProvider {
     static var previews: some View {

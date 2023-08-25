@@ -29,6 +29,8 @@
 		E360E7452A8F7CFD0057CE20 /* EmtyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360E7442A8F7CFD0057CE20 /* EmtyView.swift */; };
 		E360E7472A8F7E7C0057CE20 /* TextButtonUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360E7462A8F7E7C0057CE20 /* TextButtonUI.swift */; };
 		E36AAACE2A985FD600C50349 /* PlayAgainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36AAACD2A985FD600C50349 /* PlayAgainView.swift */; };
+		E36AAAD42A987FC200C50349 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36AAAD32A987FC200C50349 /* TimerView.swift */; };
+		E36AAAD82A98809100C50349 /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36AAAD72A98809100C50349 /* TimerModel.swift */; };
 		E3AE35372A94777D00B57D93 /* ComboBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AE35362A94777D00B57D93 /* ComboBar.swift */; };
 		E3AE35392A94865900B57D93 /* ComboBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AE35382A94865900B57D93 /* ComboBarModel.swift */; };
 		E3AE353B2A948A1900B57D93 /* TableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AE353A2A948A1900B57D93 /* TableModel.swift */; };
@@ -81,6 +83,8 @@
 		E360E7442A8F7CFD0057CE20 /* EmtyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmtyView.swift; sourceTree = "<group>"; };
 		E360E7462A8F7E7C0057CE20 /* TextButtonUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButtonUI.swift; sourceTree = "<group>"; };
 		E36AAACD2A985FD600C50349 /* PlayAgainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayAgainView.swift; sourceTree = "<group>"; };
+		E36AAAD32A987FC200C50349 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		E36AAAD72A98809100C50349 /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 		E3AE35362A94777D00B57D93 /* ComboBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComboBar.swift; sourceTree = "<group>"; };
 		E3AE35382A94865900B57D93 /* ComboBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComboBarModel.swift; sourceTree = "<group>"; };
 		E3AE353A2A948A1900B57D93 /* TableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableModel.swift; sourceTree = "<group>"; };
@@ -217,6 +221,7 @@
 				E3AE353A2A948A1900B57D93 /* TableModel.swift */,
 				E3AE353C2A94AA5400B57D93 /* GameSystem.swift */,
 				E3AE353E2A94AB8300B57D93 /* PointCalculatorModel.swift */,
+				E36AAAD72A98809100C50349 /* TimerModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -240,6 +245,7 @@
 				E3AE35362A94777D00B57D93 /* ComboBar.swift */,
 				E3AE35402A94AC9800B57D93 /* PointBoard.swift */,
 				E36AAACD2A985FD600C50349 /* PlayAgainView.swift */,
+				E36AAAD32A987FC200C50349 /* TimerView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -386,6 +392,7 @@
 				E360E7452A8F7CFD0057CE20 /* EmtyView.swift in Sources */,
 				E360E73F2A8F56DF0057CE20 /* Test.swift in Sources */,
 				E3AE353B2A948A1900B57D93 /* TableModel.swift in Sources */,
+				E36AAAD42A987FC200C50349 /* TimerView.swift in Sources */,
 				E33A329A2A93264200F98879 /* PokeCard.swift in Sources */,
 				E33A32AB2A9352C700F98879 /* MainNormalView.swift in Sources */,
 				E3AE35392A94865900B57D93 /* ComboBarModel.swift in Sources */,
@@ -395,6 +402,7 @@
 				E360E70D2A8F36030057CE20 /* asm2_iosApp.swift in Sources */,
 				E33A329C2A9327CE00F98879 /* PokeCardView.swift in Sources */,
 				E360E73D2A8F52250057CE20 /* ButtonUI.swift in Sources */,
+				E36AAAD82A98809100C50349 /* TimerModel.swift in Sources */,
 				E3AE35372A94777D00B57D93 /* ComboBar.swift in Sources */,
 				E360E7412A8F69DD0057CE20 /* ShiningView.swift in Sources */,
 			);
