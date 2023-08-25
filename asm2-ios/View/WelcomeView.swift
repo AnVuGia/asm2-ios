@@ -47,7 +47,12 @@ struct WelcomeView: View {
         
                         })
                         ButtonUI(content: "Leaderboard", action:   {})
-                        ButtonUI(content: "How to play", action: {})
+                    NavigationLink {
+                        TutorialView()
+                    } label: {
+                        TextButtonUI(content: "How to play")
+                    }
+
                    
                         ButtonUI(content: "Setting", action: {})
 

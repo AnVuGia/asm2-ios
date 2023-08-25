@@ -28,10 +28,8 @@ struct TutorialPage: View {
 
 struct TutorialView: View {
     let tutorialPages = [
-        TutorialPage(image: "tutorial_image_1", title: "Welcome to MyApp", description: "Learn how to use our amazing app."),
+        TutorialPage(image: "tutorial_image_1", title: "Welcome to PokeFlipper", description: "Learn how to play our amazing game."),
         TutorialPage(image: "tutorial_image_2", title: "Get Started", description: "Swipe through this tutorial to get started."),
-        TutorialPage(image: "tutorial_image_2", title: "Combo", description: "Swipe through this tutorial to get started."),
-        TutorialPage(image: "tutorial_image_3", title: "Enjoy!", description: "You're now ready to use MyApp.")
     ]
 
     var body: some View {
@@ -41,6 +39,11 @@ struct TutorialView: View {
                     .padding()
                     .tag(page.title)
             }
+            TutorialFlip()
+            ComboTutorial()
+            ComboTutorial2()
+            MultiplierView()
+            TimerTutorial()
         }
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
         .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
