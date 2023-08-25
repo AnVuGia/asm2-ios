@@ -28,6 +28,7 @@
 		E360E7432A8F71680057CE20 /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360E7422A8F71680057CE20 /* MainPageView.swift */; };
 		E360E7452A8F7CFD0057CE20 /* EmtyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360E7442A8F7CFD0057CE20 /* EmtyView.swift */; };
 		E360E7472A8F7E7C0057CE20 /* TextButtonUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360E7462A8F7E7C0057CE20 /* TextButtonUI.swift */; };
+		E36AAACE2A985FD600C50349 /* PlayAgainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36AAACD2A985FD600C50349 /* PlayAgainView.swift */; };
 		E3AE35372A94777D00B57D93 /* ComboBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AE35362A94777D00B57D93 /* ComboBar.swift */; };
 		E3AE35392A94865900B57D93 /* ComboBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AE35382A94865900B57D93 /* ComboBarModel.swift */; };
 		E3AE353B2A948A1900B57D93 /* TableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AE353A2A948A1900B57D93 /* TableModel.swift */; };
@@ -79,6 +80,7 @@
 		E360E7422A8F71680057CE20 /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
 		E360E7442A8F7CFD0057CE20 /* EmtyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmtyView.swift; sourceTree = "<group>"; };
 		E360E7462A8F7E7C0057CE20 /* TextButtonUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButtonUI.swift; sourceTree = "<group>"; };
+		E36AAACD2A985FD600C50349 /* PlayAgainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayAgainView.swift; sourceTree = "<group>"; };
 		E3AE35362A94777D00B57D93 /* ComboBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComboBar.swift; sourceTree = "<group>"; };
 		E3AE35382A94865900B57D93 /* ComboBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComboBarModel.swift; sourceTree = "<group>"; };
 		E3AE353A2A948A1900B57D93 /* TableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableModel.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				E33A32A82A934AE300F98879 /* TableView.swift */,
 				E3AE35362A94777D00B57D93 /* ComboBar.swift */,
 				E3AE35402A94AC9800B57D93 /* PointBoard.swift */,
+				E36AAACD2A985FD600C50349 /* PlayAgainView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				E33A32AB2A9352C700F98879 /* MainNormalView.swift in Sources */,
 				E3AE35392A94865900B57D93 /* ComboBarModel.swift in Sources */,
 				E360E7472A8F7E7C0057CE20 /* TextButtonUI.swift in Sources */,
+				E36AAACE2A985FD600C50349 /* PlayAgainView.swift in Sources */,
 				E3AE353F2A94AB8300B57D93 /* PointCalculatorModel.swift in Sources */,
 				E360E70D2A8F36030057CE20 /* asm2_iosApp.swift in Sources */,
 				E33A329C2A9327CE00F98879 /* PokeCardView.swift in Sources */,

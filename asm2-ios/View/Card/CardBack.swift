@@ -21,7 +21,8 @@ struct CardBack: View {
                     .aspectRatio(contentMode: .fit)
                 .frame(width: 70, height: 90)
                 Text("\(pokeCard.name)")
-                    .foregroundColor(Color.white)
+                    .foregroundColor(Color.black)
+                    .background(Color.white)
             }
                 }
     }

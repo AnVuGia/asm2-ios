@@ -16,18 +16,16 @@ struct WelcomeView: View {
                 Image("welcome-background")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
+                    .frame(width: UIScreen.main.bounds.width-100)
                     .ignoresSafeArea()
-                    .offset(x:-45, y: 0)
-                VStack{
+                    
+
                     Image("poke-logo")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: UIScreen.main.bounds.width - 30)
+                        .frame(width: UIScreen.main.bounds.width - 30,height: UIScreen.main.bounds.height-200, alignment: .top)
                         .shadow(color: Color.yellow, radius: 13)
-                        .offset(x:0, y:60)
-                    Button(action:  {
-                        print("Click")
-                    }) {
+                        
                         ZStack {
                             ShiningView(isShining: $isStart, shineColor: Color.white, size: 100, shadowSize: 15)
                             Image("poke-ball")
@@ -39,12 +37,12 @@ struct WelcomeView: View {
                             }
                         }.rotationEffect(.degrees(isStart ? 360 : 0))
                             .animation(.linear(duration: 2).repeatForever(autoreverses: false), value: isStart)
+                            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height+20, alignment: .center)
                             
-                    }.offset(x:0,y:105)
                     
-                    VStack{
+                VStack{
                         
-                        NavigationLink(destination: MainPageView(), label: {
+                        NavigationLink(destination: MainNormalView(), label: {
                             TextButtonUI(content: "Game Start")
         
                         })
@@ -53,18 +51,21 @@ struct WelcomeView: View {
                    
                         ButtonUI(content: "Setting", action: {})
 
-                                     }.offset(x:0,y:160)
+                }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height-120, alignment: .bottom)
 
                     
                     
                     Spacer()
                        
                     
-                }
+        
                 
             }
         }.onDisappear(){
         }
+        .navigationBarBackButtonHidden(true)
+            .navigationBarHidden(true)
+
     }
 }
 

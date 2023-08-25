@@ -65,7 +65,7 @@ class TableModel: ObservableObject {
                     let pokemon = pokemonData[self.cards[row][column]]
                     self.comboBarModel.addCombo(element: pokemon.type)
                     self.discardCard.append(self.cards[row][column])
-                    if(self.discardCard.count == 2){
+                    if(self.discardCard.count == 10){
                         self.isDone = true
                         print("in table model done \(self.isDone)")
                     }
@@ -78,7 +78,6 @@ class TableModel: ObservableObject {
                         self.isClicks[tempRow][tempColumn].toggle()
                     }
                 }
-                
                 // Reset the click count
                 self.clickCount = 0
             }

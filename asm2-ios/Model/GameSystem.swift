@@ -12,6 +12,8 @@ class GameSystem : ObservableObject {
     @Published var pointBoardModel = PointCalculatorModel()
     @Published var comboBarModel = CombobarModel()
     @Published var table = TableModel()
+    @State var UserHighScore = UserDefaults.standard.array(forKey: "high-score")
+    @State var highScore : [Int] = []
     init() {
         self.comboBarModel.attachPointBoard(targetPointBoard: pointBoardModel)
         self.table.attachComboBar(targetComboBar: comboBarModel)
@@ -21,7 +23,10 @@ class GameSystem : ObservableObject {
         table.attachComboBar(targetComboBar: comboBarModel)
         self.table.isDone = false
     }
-   
+    func endGame(){
+        highScore.append(pointBoardModel.currentPoints)
+        UserDefaults.standard.set(UserHighScore , forKey: "high-score")
+    }
 }
 
 

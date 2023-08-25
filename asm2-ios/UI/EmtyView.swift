@@ -12,7 +12,7 @@ struct EmtyView: View {
         Button(""){
             
         }.frame(width: 70, height: 90)
-            .background(Color.yellow)
+    
             
     }
 }

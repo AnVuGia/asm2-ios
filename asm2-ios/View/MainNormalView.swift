@@ -10,6 +10,7 @@ import SwiftUI
 struct MainNormalView: View {
         @ObservedObject var gameSystem = GameSystem()
         @ObservedObject var table = TableModel()
+        @State var currrentRound = 1
     init() {
         self.table = gameSystem.table
     }
@@ -21,23 +22,31 @@ struct MainNormalView: View {
                 .aspectRatio(contentMode: .fill)
                 .ignoresSafeArea()
             VStack {
-                if(table.isDone){
-                    Button("Play again"){
-                        gameSystem.playAgain()
-                    }
-                    
-                } else {
-                    Text("Is playing")
-                }
-                
                 TableView(tableModel: gameSystem.table)
                 ComboBar(comboBarModel: gameSystem.comboBarModel)
                     .padding(.top, 5)
                 PointBoard(pointModel: gameSystem.pointBoardModel)
             }.padding()
-                .background(Color.red)
+            if(table.isDone){
+                if(currrentRound <= 3){
+                    Button("Next Round") {
+                        gameSystem.playAgain()
+                        currrentRound+=1
+                        table.isDone = false
+                    }.background(Color.white)
+                } else {
+                    PlayAgainView(score: gameSystem.pointBoardModel.currentPoints)
+                }
+                
+            }
+            
         }
+        .navigationBarBackButtonHidden(true)
+            .navigationBarHidden(true)
+
     }
+       
+
 }
 
 struct MainNormalView_Previews: PreviewProvider {

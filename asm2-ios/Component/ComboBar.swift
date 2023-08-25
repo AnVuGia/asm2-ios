@@ -23,6 +23,9 @@ struct ComboBar: View {
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 40)
                         }
+                    } else {
+                        EmtyView().frame(width: 40, height: 40)
+                        
                     }
                     ZStack {
                         Image("combo-bar")
@@ -55,6 +58,8 @@ struct ComboBar: View {
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 40)
                         }
+                    } else {
+                        EmtyView().frame(width: 40, height: 40)
                     }
                 }
 //                Button("Click") {

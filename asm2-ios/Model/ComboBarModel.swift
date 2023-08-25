@@ -28,7 +28,7 @@ class CombobarModel: ObservableObject {
     ]
     func addCombo(element: String) {
         currentCombo.append(element)
-        let multiplier = checkCombo()
+        let multiplier = checkCombo(element: element)
         print("count: \(currentCombo.count)")
         pointBoard.addPoints(points: basePoints, multiplier: multiplier)
         if(multiplier >= 2){
@@ -37,7 +37,7 @@ class CombobarModel: ObservableObject {
             }
         }
     }
-    func checkCombo()->Int{
+    func checkCombo(element:String)->Int{
         if(currentCombo.count == 3) {
             if(isChaos && isResonent){
                 isChaos = false
@@ -54,9 +54,14 @@ class CombobarModel: ObservableObject {
             } else {
                 if isChaos {isResonent = true}
                 else if isResonent {isChaos = true}
-                else {isChaos = true}
+                else {isResonent = true}
                 return 2
             }
+        } else if (element == "Electric") {
+            currentCombo.remove(at: currentCombo.count-1)
+            if isChaos {isResonent = true}
+            else if isResonent {isChaos = true}
+            else {isResonent = true}
         }
         return 1
     }
