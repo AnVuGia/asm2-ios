@@ -61,10 +61,6 @@ struct ComboBar: View {
                         EmtyView().frame(width: 40, height: 40)
                     }
                 }
-//                Button("Click") {
-//                    let index = Int.random(in: 0..<3)
-//                    comboBarModel.addCombo(element: test[index])
-//                }
             }
            
     }
@@ -72,7 +68,7 @@ struct ComboBar: View {
 
 struct ComboBar_Previews: PreviewProvider {
     static var previews: some View {
-        var pointBoard = PointCalculatorModel()
+        var pointBoard = PointCalculatorModel(difficultyMulti: 1)
         @State var comboBar = CombobarModel()
         ComboBar(comboBarModel: comboBar)
     }

@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 class TimerModel : ObservableObject {
-    let timerCount : Int
+    var timerCount : Int
     @Published var remainingTime : Int// Initial time in seconds
     @Published  var timerIsRunning = false
     @Published var isOver : Bool = false

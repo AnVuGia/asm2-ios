@@ -12,7 +12,7 @@ import SwiftUI
 struct asm2_iosApp: App {
     var body: some Scene {
         WindowGroup {
-            MainNormalView()
+            WelcomeView()
             
         }
     }

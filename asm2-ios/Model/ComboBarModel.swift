@@ -17,7 +17,7 @@ class CombobarModel: ObservableObject {
         self.currentCombo = []
         self.isResonent = false
         self.isChaos = false
-        self.pointBoard = PointCalculatorModel()
+        self.pointBoard = PointCalculatorModel(difficultyMulti: 1)
     }
     let colors: [String:Color] = [
         "Fire": Color.red,

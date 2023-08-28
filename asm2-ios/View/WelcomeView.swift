@@ -10,6 +10,7 @@ import SwiftUI
 struct WelcomeView: View {
    @State private var isStart = false
     @State private var navigationNextView = false
+    @State private var difficulty = 1
     var body: some View {
         NavigationStack {
             ZStack {
@@ -41,29 +42,29 @@ struct WelcomeView: View {
                             
                     
                 VStack{
-                        
-                        NavigationLink(destination: MainNormalView(), label: {
+                    NavigationLink(destination: MainNormalView(difficulty: difficulty), label: {
                             TextButtonUI(content: "Game Start")
         
                         })
-                        ButtonUI(content: "Leaderboard", action:   {})
+                    NavigationLink {
+                        MainNormalView(difficulty: difficulty)
+                    } label: {
+                        TextButtonUI(content: "Continue")
+                    }
+
                     NavigationLink {
                         TutorialView()
                     } label: {
                         TextButtonUI(content: "How to play")
                     }
-
+                    NavigationLink {
+                        DifficultyView(difficulty: $difficulty)
+                    } label: {
+                        TextButtonUI(content: "Setting")
+                    }
                    
-                        ButtonUI(content: "Setting", action: {})
-
                 }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height-120, alignment: .bottom)
-
-                    
-                    
                     Spacer()
-                       
-                    
-        
                 
             }
         }.onDisappear(){

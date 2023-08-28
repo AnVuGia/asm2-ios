@@ -19,16 +19,12 @@ struct PointBoard: View {
                 Text("\(pointModel.currentPoints)")
                     .foregroundColor(Color.white)
             }.frame(width: 130)
-           Button("click"){
-               pointModel.addPoints(points: 200, multiplier: 3)
-
-          }
         }
     }
 }
 
 struct PointBoard_Previews: PreviewProvider {
     static var previews: some View {
-        PointBoard(pointModel: PointCalculatorModel())
+        PointBoard(pointModel: PointCalculatorModel(difficultyMulti: 1))
     }
 }

@@ -19,7 +19,6 @@ class TableModel: ObservableObject {
     @Published  var comboBarModel : CombobarModel
     @Published var isDone = false
     @Published var timerModel = TimerModel(timerCount: 10)
-    private let timer = 10
     init() {
             self.isClicks = Array(repeating: Array(repeating: false, count: 5), count: 4)
             self.cards = Array(repeating: Array(repeating: 0, count: 5), count: 4)
@@ -41,7 +40,6 @@ class TableModel: ObservableObject {
         }
     }
     func onFlipCard(row: Int, column: Int) {
-        print("\(row) , \(column)")
         
         // Check if the selected card is already flipped or if clickCount exceeds 2
         if isClicks[row][column] || clickCount >= 2 {
@@ -49,7 +47,6 @@ class TableModel: ObservableObject {
             return
         }
         
-        print("Flip")
         
         // Toggle the card's state
         isClicks[row][column].toggle()
@@ -63,7 +60,6 @@ class TableModel: ObservableObject {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 // Check matching cards
                 if self.checkSameCard() {
-                    print("\(true)")
                     let pokemon = pokemonData[self.cards[row][column]]
                     self.comboBarModel.addCombo(element: pokemon.type)
                     self.discardCard.append(self.cards[row][column])
