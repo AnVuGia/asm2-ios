@@ -25,9 +25,5 @@ class TimerModel : ObservableObject {
         remainingTime = timerCount
         timerIsRunning = true
     }
-    func end(){
-        isOver = true
-        remainingTime = 0
-        timerIsRunning = false
-    }
+   
 }

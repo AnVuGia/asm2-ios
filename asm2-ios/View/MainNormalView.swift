@@ -9,11 +9,10 @@ import SwiftUI
 
 struct MainNormalView: View {
     @ObservedObject var gameSystem = GameSystem(difficulty: 1)
-    @ObservedObject var table = TableModel()
+
     @ObservedObject var timerModel = TimerModel(timerCount: 0)
     init(difficulty: Int) {
 
-        self.table = gameSystem.table
         gameSystem.attachTimerModel(timerModel: timerModel)
         gameSystem.difficulty = difficulty
         if(difficulty == 1) {
@@ -51,12 +50,12 @@ struct MainNormalView: View {
                         .padding(.top, 5)
                     PointBoard(pointModel: gameSystem.pointBoardModel)
                 }.padding()
-                if(table.isDone){
-                    if(gameSystem.currentRound <= 5){
+            if(gameSystem.table.isDone){
+                    if(gameSystem.currentRound < 5){
                         Button("Next Round") {
                             gameSystem.playAgain()
                             gameSystem.currentRound+=1
-                            table.isDone = false
+                            gameSystem.table.isDone = false
                             gameSystem.timerModel.remainingTime = gameSystem.timerModel.timerCount
                             gameSystem.timerModel.timerIsRunning = true
                         }.background(Color.white)

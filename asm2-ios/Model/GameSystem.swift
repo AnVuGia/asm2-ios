@@ -16,7 +16,7 @@ class GameSystem : ObservableObject {
     @State var UserHighScore = UserDefaults.standard.array(forKey: "high-score")
     @State var highScore : [Int] = []
     @State var difficulty : Int = 1
-    @State var currentRound : Int = 1
+    @Published var currentRound : Int = 1
     init(difficulty : Int) {
         self.comboBarModel.attachPointBoard(targetPointBoard: pointBoardModel)
         self.table.attachComboBar(targetComboBar: comboBarModel)
@@ -28,16 +28,18 @@ class GameSystem : ObservableObject {
         self.table = TableModel()
         table.attachComboBar(targetComboBar: comboBarModel)
         self.table.isDone = false
-        self.timerModel.end()
+        table.attachTimer(timerModel: timerModel)
     }
     func endGame(){
         highScore.append(pointBoardModel.currentPoints)
         UserDefaults.standard.set(UserHighScore , forKey: "high-score")
-        self.timerModel.end()
     }
     func attachTimerModel(timerModel: TimerModel){
         self.timerModel = timerModel
         table.attachTimer(timerModel: timerModel)
+    }
+    func save() {
+        
     }
 }
 
