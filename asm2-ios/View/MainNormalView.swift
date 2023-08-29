@@ -20,7 +20,7 @@ struct MainNormalView: View {
         } else if difficulty == 2{
             timerModel.timerCount = 30
         } else if difficulty == 4 {
-            timerModel.timerCount = 10
+            timerModel.timerCount = 15
         }
     }
     var body: some View {
@@ -57,6 +57,7 @@ struct MainNormalView: View {
                             gameSystem.currentRound+=1
                             gameSystem.table.isDone = false
                             gameSystem.timerModel.remainingTime = gameSystem.timerModel.timerCount
+                            gameSystem.timerModel.timerCount = gameSystem.timerModel.timerCount - 2
                             gameSystem.timerModel.timerIsRunning = true
                         }.background(Color.white)
                             .onAppear{
@@ -67,9 +68,9 @@ struct MainNormalView: View {
                         PlayAgainView(score: gameSystem.pointBoardModel.currentPoints)
                     }
                 }
-//            if (gameSystem.timerModel.isOver && gameSystem.timerModel.timerIsRunning){
-//                    PlayAgainView(score: gameSystem.pointBoardModel.currentPoints)
-//                }
+            if (gameSystem.timerModel.isOver && gameSystem.timerModel.timerIsRunning){
+                    PlayAgainView(score: gameSystem.pointBoardModel.currentPoints)
+                }
                 
             }
             .navigationBarBackButtonHidden(true)

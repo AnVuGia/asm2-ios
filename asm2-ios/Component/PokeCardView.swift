@@ -36,10 +36,8 @@ struct PokeCardView: View {
             }
             .frame(width: 60, height: 90)
             .background(AngularGradient(colors: [colorSets[0], colorSets[1], colorSets[2], colorSets[1], colorSets[0]], center: .center, startAngle: .degrees(90), endAngle: .degrees(360)))
-            .clipShape(RoundedRectangle(cornerRadius: 20))
             .padding([.leading, .trailing, .top, .bottom], 2)
             .background(Color.black)
-            .clipShape(RoundedRectangle(cornerRadius: 20))
             VStack {
                 HStack{
                     Spacer()
