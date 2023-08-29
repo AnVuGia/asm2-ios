@@ -10,14 +10,11 @@ import SwiftUI
 struct CardBack: View {
     var pokeCard : PokeCard
     @Binding var isClick : Bool
-    @State private var tempClick = false
-    @State private var animate3d = false
+    @State private var flipped = false
     var body: some View {
         VStack{
-            if (isClick || tempClick){
-                PokeCardView(pokeCard: pokeCard)
-            }
-            else{
+            ZStack{
+                PokeCardView(pokeCard: pokeCard).opacity(flipped ? 1.0 : 0)
                 ZStack {
                     Image("card-back")
                         .resizable()
@@ -26,15 +23,8 @@ struct CardBack: View {
                     Text("\(pokeCard.name)")
                         .foregroundColor(Color.black)
                         .background(Color.white)
-                }
-                .modifier(FlipEffect(flipped: $tempClick, angle: animate3d ? 180 : 0, axis: (x: 0, y: 1)))
-                
-            }
-                        Button("Click") {
-                            withAnimation(.easeInOut(duration: 0.5)) {
-                                tempClick.toggle()
-                            }
-            }
+                }.opacity(flipped ? 0 : 1.0)
+            }.modifier(FlipEffect(flipped: $flipped, angle: isClick ? 180 : 0, axis: (x: 0, y: 1)))
         }
     }
 }

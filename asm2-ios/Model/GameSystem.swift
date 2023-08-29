@@ -17,7 +17,7 @@ class GameSystem : ObservableObject {
     @State var highScore : [Int] = []
     @State var difficulty : Int = 1
     @Published var currentRound : Int = 1
-    init(difficulty : Int) {
+        init(difficulty : Int) {
         self.comboBarModel.attachPointBoard(targetPointBoard: pointBoardModel)
         self.table.attachComboBar(targetComboBar: comboBarModel)
         self.table.attachTimer(timerModel: timerModel)
@@ -38,8 +38,40 @@ class GameSystem : ObservableObject {
         self.timerModel = timerModel
         table.attachTimer(timerModel: timerModel)
     }
-    func save() {
+    func load() {
+        self.pointBoardModel.currentPoints  = UserDefaults.standard.integer(forKey: "currentPoints")
         
+        if let myArray = UserDefaults.standard.array(forKey: "currentComboBar") as? [String] {
+            self.comboBarModel.currentCombo = myArray
+        } else {
+            print("Value not found in UserDefaults currentCombo")
+        }
+        
+        self.comboBarModel.isChaos = UserDefaults.standard.bool(forKey: "isChaos")
+        self.comboBarModel.isResonent = UserDefaults.standard.bool(forKey: "isResonance")
+        
+        if let myArray = UserDefaults.standard.array(forKey: "cards") as? [[Int]] {
+            self.table.cards = myArray
+                } else {
+            print("Value not found in UserDefaults cards")
+        }
+        
+        if let myArray = UserDefaults.standard.array(forKey: "isClicks") as? [[Bool]] {
+            self.table.isClicks  = myArray
+        } else {
+            print("Value not found in UserDefaults isClicks")
+        }
+        
+        if let myArray = UserDefaults.standard.array(forKey: "discardCards") as? [Int] {
+            self.table.discardCard = myArray
+        } else {
+            print("Value not found in UserDefaults discardCards")
+        }
+        
+        self.currentRound = UserDefaults.standard.integer(forKey: "currentRound")
+        self.difficulty = UserDefaults.standard.integer(forKey: "difficulty")
+
+
     }
 }
 

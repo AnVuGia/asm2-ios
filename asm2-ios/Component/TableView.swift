@@ -19,7 +19,9 @@ struct TableView: View {
                                 EmtyView()
                             } else {
                                 Button {
-                                    tableModel.onFlipCard(row: rowIndex, column: columnIndex)
+                                    withAnimation(Animation.linear(duration: 0.3)){
+                                        tableModel.onFlipCard(row: rowIndex, column: columnIndex)
+                                    }
                                 } label: {
                                     let index = tableModel.cards[rowIndex][columnIndex]
                                     let isClickTemp = Binding(

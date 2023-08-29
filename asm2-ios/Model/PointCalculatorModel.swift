@@ -18,5 +18,6 @@ class PointCalculatorModel: ObservableObject {
     }
     func addPoints(points: Int, multiplier: Int) {
         currentPoints += points * multiplier * difficultyMulti
+        saveNotes.storeCurrentPoints(currentPoints: currentPoints)
     }
 }

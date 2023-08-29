@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WelcomeView: View {
-   @State private var isStart = false
+    @State private var isStart = false
     @State private var navigationNextView = false
     @State private var difficulty = 1
     var body: some View {
@@ -42,12 +42,12 @@ struct WelcomeView: View {
                             
                     
                 VStack{
-                    NavigationLink(destination: MainNormalView(difficulty: difficulty), label: {
+                    NavigationLink(destination: MainNormalView(difficulty: difficulty, isContinue: false), label: {
                             TextButtonUI(content: "Game Start")
         
                         })
                     NavigationLink {
-                        MainNormalView(difficulty: difficulty)
+                        MainNormalView(difficulty: difficulty, isContinue: true)
                     } label: {
                         TextButtonUI(content: "Continue")
                     }

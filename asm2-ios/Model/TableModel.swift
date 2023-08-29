@@ -73,7 +73,9 @@ class TableModel: ObservableObject {
                         let temp = self.playerCurrentCards[index]
                         let tempRow = temp[0]
                         let tempColumn = temp[1]
-                        self.isClicks[tempRow][tempColumn].toggle()
+                        withAnimation(Animation.linear(duration: 0.3)){
+                            self.isClicks[tempRow][tempColumn].toggle()
+                        }
                     }
                 }
                 // Reset the click count
@@ -85,18 +87,17 @@ class TableModel: ObservableObject {
         let card1 = playerCurrentCards[0]
         let card2 = playerCurrentCards[1]
         
+
         // Check if the two selected cards match based on their positions
         if(card1[0] > -1 && card2[0] > -1) {
-            print("card1: \(card1[0]) \(card1[1])")
-            print("card2: \(card2[0]) \(card2[1])")
             return cards[card1[0]][card1[1]] == cards[card2[0]][card2[1]]
         } else  {
             return false
-
         }
     }
     func checkDone(row: Int, column: Int) -> Bool {
         if(isClicks[row][column] && discardCard.contains(cards[row][column])){
+            saveNotes.storeTable(cards: cards, discardCards: discardCard, isClicks: isClicks)
             return true
         }
         return false
@@ -116,4 +117,4 @@ class TableModel: ObservableObject {
     func attachTimer(timerModel : TimerModel) {
         self.timerModel = timerModel
     }
-}
+    }

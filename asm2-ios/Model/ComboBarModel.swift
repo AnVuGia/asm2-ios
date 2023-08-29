@@ -28,6 +28,7 @@ class CombobarModel: ObservableObject {
     ]
     func addCombo(element: String) {
         currentCombo.append(element)
+        saveNotes.storeCurrentComboBar(currentComboBar: self.currentCombo, isResonace: self.isResonent, isChaos: self.isChaos)
         let multiplier = checkCombo(element: element)
         print("count: \(currentCombo.count)")
         pointBoard.addPoints(points: basePoints, multiplier: multiplier)

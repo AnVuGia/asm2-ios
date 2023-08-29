@@ -36,6 +36,8 @@
 		E36AAAE32A989A6C00C50349 /* ComboTutorial2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36AAAE22A989A6C00C50349 /* ComboTutorial2.swift */; };
 		E36AAAE52A989DC200C50349 /* MultiplierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36AAAE42A989DC200C50349 /* MultiplierView.swift */; };
 		E36AAAE72A98A03400C50349 /* TimerTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36AAAE62A98A03400C50349 /* TimerTutorial.swift */; };
+		E39FF7652A9DDACD0008A63B /* SaveNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39FF7642A9DDACD0008A63B /* SaveNotes.swift */; };
+		E39FF7672A9DE2D50008A63B /* save-notes.json in Resources */ = {isa = PBXBuildFile; fileRef = E39FF7662A9DE2D50008A63B /* save-notes.json */; };
 		E3AE35372A94777D00B57D93 /* ComboBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AE35362A94777D00B57D93 /* ComboBar.swift */; };
 		E3AE35392A94865900B57D93 /* ComboBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AE35382A94865900B57D93 /* ComboBarModel.swift */; };
 		E3AE353B2A948A1900B57D93 /* TableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AE353A2A948A1900B57D93 /* TableModel.swift */; };
@@ -96,6 +98,8 @@
 		E36AAAE22A989A6C00C50349 /* ComboTutorial2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComboTutorial2.swift; sourceTree = "<group>"; };
 		E36AAAE42A989DC200C50349 /* MultiplierView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplierView.swift; sourceTree = "<group>"; };
 		E36AAAE62A98A03400C50349 /* TimerTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTutorial.swift; sourceTree = "<group>"; };
+		E39FF7642A9DDACD0008A63B /* SaveNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveNotes.swift; sourceTree = "<group>"; };
+		E39FF7662A9DE2D50008A63B /* save-notes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "save-notes.json"; sourceTree = "<group>"; };
 		E3AE35362A94777D00B57D93 /* ComboBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComboBar.swift; sourceTree = "<group>"; };
 		E3AE35382A94865900B57D93 /* ComboBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComboBarModel.swift; sourceTree = "<group>"; };
 		E3AE353A2A948A1900B57D93 /* TableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableModel.swift; sourceTree = "<group>"; };
@@ -136,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				E33A32A62A93488A00F98879 /* poke-data.json */,
+				E39FF7662A9DE2D50008A63B /* save-notes.json */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -227,6 +232,7 @@
 				E3AE353C2A94AA5400B57D93 /* GameSystem.swift */,
 				E3AE353E2A94AB8300B57D93 /* PointCalculatorModel.swift */,
 				E36AAAD72A98809100C50349 /* TimerModel.swift */,
+				E39FF7642A9DDACD0008A63B /* SaveNotes.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -372,6 +378,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E39FF7672A9DE2D50008A63B /* save-notes.json in Resources */,
 				E360E7152A8F36040057CE20 /* Preview Assets.xcassets in Resources */,
 				E360E7112A8F36040057CE20 /* Assets.xcassets in Resources */,
 				E33A32A72A93488A00F98879 /* poke-data.json in Resources */,
@@ -409,6 +416,7 @@
 				E33A32AD2A93693B00F98879 /* PokeData.swift in Sources */,
 				E36AAADA2A988FED00C50349 /* TutorialView.swift in Sources */,
 				E360E7452A8F7CFD0057CE20 /* EmtyView.swift in Sources */,
+				E39FF7652A9DDACD0008A63B /* SaveNotes.swift in Sources */,
 				E360E73F2A8F56DF0057CE20 /* Test.swift in Sources */,
 				E3AE353B2A948A1900B57D93 /* TableModel.swift in Sources */,
 				E36AAAD42A987FC200C50349 /* TimerView.swift in Sources */,
