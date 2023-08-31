@@ -9,28 +9,9 @@ import SwiftUI
 
 struct PlayAgainView: View {
     var score :Int
-    private var currentPlace = 0
+    @State private var currentPlace = 0
     init(score: Int) {
         self.score = score
-    
-        if var scores = UserDefaults.standard.array(forKey: "high-score") as? [Int] {
-            scores.append(score)
-            scores.sort()
-            if let currentPlace = scores.firstIndex(of: score) {
-                // Update UserDefaults with the new sorted array
-                UserDefaults.standard.set(scores, forKey: "high-score")
-                
-                // You can use the currentPlace index as needed
-                print("New score's index: \(currentPlace)")
-            } else {
-                // Handle the case when the score's index is nil (not found)
-            }
-        } else {
-            // Handle the case when high-score is nil or cannot be cast to [Int]
-            // For example, you might want to set a default value or perform other actions.
-        }
-
-        
     }
     var body: some View {
         NavigationStack{
@@ -38,7 +19,7 @@ struct PlayAgainView: View {
                 Color.black
                     .ignoresSafeArea()
                     .opacity(0.7)
-
+                
                 VStack {
                     Text("GAME OVER")
                         .foregroundColor(Color.white)
@@ -55,13 +36,14 @@ struct PlayAgainView: View {
                                 .frame(width: 100)
                             Text("Play Again")
                                 .foregroundColor(Color.white)
+                            
                         }
                         
-                        
-                        
-
                     }
                 }
+            }.onAppear {
+               let index = saveNotes.storeLeaderboard(totalPoints: score)
+                currentPlace = index
             }
         }.navigationBarBackButtonHidden(true)
             .navigationBarHidden(true)

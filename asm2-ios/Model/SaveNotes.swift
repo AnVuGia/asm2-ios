@@ -18,7 +18,7 @@ class SaveNotes {
     private var isChaos = UserDefaults.standard.bool(forKey: "isChaos")
     private var isResonance = UserDefaults.standard.bool(forKey: "isResonance")
     private var difficulty = UserDefaults.standard.integer(forKey: "difficulty")
-   
+    private var leaderBoard : [Int] = []
     func storeTable (cards: [[Int]] , discardCards: [Int], isClicks : [[Bool]]){
         UserDefaults.standard.set(cards, forKey: "cards")
         UserDefaults.standard.set(discardCards , forKey: "discardCards")
@@ -37,5 +37,31 @@ class SaveNotes {
         func storeDifficulty(difficulty: Int){
             UserDefaults.standard.set(difficulty, forKey: "difficulty")
         }
-    
+    func storeLeaderboard(totalPoints: Int) ->Int {
+        if var leaderBoard = UserDefaults.standard.array(forKey: "leaderboard") as? [Int] {
+            // Add totalPoints to the leaderboard
+            leaderBoard.append(totalPoints)
+            
+            // Sort the leaderboard
+            leaderBoard.sort()
+            
+            // Find the index of totalPoints
+            if let index = leaderBoard.firstIndex(of: totalPoints) {
+                print("Total Points found at index: \(index)")
+                return index
+            } else {
+                print("Total Points not found in the leaderboard")
+            }
+            
+            // Save the sorted leaderboard back to UserDefaults
+            UserDefaults.standard.set(leaderBoard, forKey: "leaderboard")
+        
+        } else {
+            // Leaderboard doesn't exist in UserDefaults, so create it with the initial value
+            let leaderBoard = [totalPoints]
+            UserDefaults.standard.set(leaderBoard, forKey: "leaderboard")
+        }
+        return -1
+    }
+
 }

@@ -58,7 +58,7 @@ struct WelcomeView: View {
                         TextButtonUI(content: "How to play")
                     }
                     NavigationLink {
-                        
+                        LeaderboardView()
                     } label: {
                         TextButtonUI(content: "Leaderboard")
                     }
