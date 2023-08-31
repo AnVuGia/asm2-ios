@@ -43,19 +43,24 @@ struct WelcomeView: View {
                     
                 VStack{
                     NavigationLink(destination: MainNormalView(difficulty: difficulty, isContinue: false), label: {
-                            TextButtonUI(content: "Game Start")
-        
-                        })
+                        TextButtonUI(content: "Game Start")
+                        
+                    })
                     NavigationLink {
                         MainNormalView(difficulty: difficulty, isContinue: true)
                     } label: {
                         TextButtonUI(content: "Continue")
                     }
-
+                    
                     NavigationLink {
                         TutorialView()
                     } label: {
                         TextButtonUI(content: "How to play")
+                    }
+                    NavigationLink {
+                        
+                    } label: {
+                        TextButtonUI(content: "Leaderboard")
                     }
                     NavigationLink {
                         DifficultyView(difficulty: $difficulty)
@@ -63,9 +68,8 @@ struct WelcomeView: View {
                         TextButtonUI(content: "Setting")
                     }
                    
-                }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height-120, alignment: .bottom)
+                }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height-80, alignment: .bottom)
                     Spacer()
-                
             }
         }.onDisappear(){
         }

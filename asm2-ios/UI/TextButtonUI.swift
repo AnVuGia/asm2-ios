@@ -11,12 +11,12 @@ struct TextButtonUI: View {
     var content: String
     var body: some View {
         Text(content)
-            .font(.largeTitle)
+            .font(.title)
             .fontWeight(.bold)
             .foregroundColor(Color.white)
             .shadow(radius: 5)
             .padding(5)
-            .padding([.leading, .trailing], 20)
+            .frame(width: 250)
             .background(
                 RoundedRectangle(cornerRadius: 30)
                 .fill(
@@ -31,8 +31,6 @@ struct TextButtonUI: View {
                         endPoint: .bottom
                     )
                 )
-                   
-
             )
             .padding(4)
             .padding([.bottom],1)

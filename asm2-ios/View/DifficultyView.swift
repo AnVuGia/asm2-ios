@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DifficultyView: View {
+    
     @Binding var difficulty : Int
     @State var currentDifficulty = "Easy"
     var body: some View {
