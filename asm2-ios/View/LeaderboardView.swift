@@ -8,24 +8,33 @@
 import SwiftUI
 
 struct LeaderboardView: View {
-    @State private var highScores : [Int] = []
     var body: some View {
-        NavigationView{
-                List(highScores, id: \.self) { item in
-                    HStack{
-                        Text("#")
-                        Text("\(item)")
-                    }
-                }.navigationTitle("Leaderboard")
-              
-
-        }
-        .onAppear{
-            highScores = saveNotes.getLeaderboard()
+        NavigationView {
+            List {
+                Text("Top 10 All-Time").font(.largeTitle)
+                
+                // Retrieve the top 10 high scores
+                ForEach(0..<min(10, saveNotes.getLeaderboard().count), id: \.self) { index in
+                    let score = saveNotes.getLeaderboard()[index]
+                    LeaderboardRow(score: score, position: index + 1)
+                }
             }
-            
+            .navigationBarTitle("Leaderboard")
         }
+    }
+}
+
+struct LeaderboardRow: View {
+    let score: Int
+    let position: Int
     
+    var body: some View {
+        HStack {
+            Text("\(position)").font(.headline)
+            Spacer()
+            Text("Score: \(score)").font(.body)
+        }
+    }
 }
 
 struct LeaderboardView_Previews: PreviewProvider {
@@ -33,3 +42,4 @@ struct LeaderboardView_Previews: PreviewProvider {
         LeaderboardView()
     }
 }
+

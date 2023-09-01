@@ -26,7 +26,7 @@ struct PlayAgainView: View {
                         .font(.largeTitle)
                     Text("Your score: \(score)")
                         .foregroundColor(Color.white)
-                    Text("You place: #\(currentPlace + 1)")
+                    Text("You place: #\(currentPlace)")
                         .foregroundColor(Color.white)
                     NavigationLink(destination: WelcomeView()) {
                         ZStack{
