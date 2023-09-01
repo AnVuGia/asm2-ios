@@ -12,19 +12,20 @@ struct LeaderboardView: View {
     var body: some View {
         NavigationView{
                 List(highScores, id: \.self) { item in
-                    Text("\(item)")
+                    HStack{
+                        Text("#")
+                        Text("\(item)")
+                    }
                 }.navigationTitle("Leaderboard")
               
 
         }
         .onAppear{
-            if let savedScores = UserDefaults.standard.array(forKey: "high-score") as? [Int] {
-                print("fetch highscore")
-                highScores = savedScores
+            highScores = saveNotes.getLeaderboard()
             }
             
         }
-    }
+    
 }
 
 struct LeaderboardView_Previews: PreviewProvider {

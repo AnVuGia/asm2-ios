@@ -29,39 +29,42 @@ class SaveNotes {
         UserDefaults.standard.set(isResonace, forKey: "isResonance")
         UserDefaults.standard.set(isChaos, forKey: "isChaos")
     }
-        func storeCurrentRound(currentRound: Int){
-            UserDefaults.standard.set(currentRound, forKey: "currentRound")
-        }
-        func storeCurrentPoints(currentPoints: Int){
-            UserDefaults.standard.set(currentPoints, forKey: "currentPoints")        }
-        func storeDifficulty(difficulty: Int){
-            UserDefaults.standard.set(difficulty, forKey: "difficulty")
-        }
-    func storeLeaderboard(totalPoints: Int) ->Int {
-        if var leaderBoard = UserDefaults.standard.array(forKey: "leaderboard") as? [Int] {
-            // Add totalPoints to the leaderboard
-            leaderBoard.append(totalPoints)
-            
-            // Sort the leaderboard
-            leaderBoard.sort()
-            
-            // Find the index of totalPoints
-            if let index = leaderBoard.firstIndex(of: totalPoints) {
-                print("Total Points found at index: \(index)")
-                return index
-            } else {
-                print("Total Points not found in the leaderboard")
-            }
-            
-            // Save the sorted leaderboard back to UserDefaults
-            UserDefaults.standard.set(leaderBoard, forKey: "leaderboard")
+    func storeCurrentRound(currentRound: Int){
+        UserDefaults.standard.set(currentRound, forKey: "currentRound")
+    }
+    func storeCurrentPoints(currentPoints: Int){
+        UserDefaults.standard.set(currentPoints, forKey: "currentPoints")        }
+    func storeDifficulty(difficulty: Int){
+        UserDefaults.standard.set(difficulty, forKey: "difficulty")
+    }
+    func storeLeaderboard(scores: [Int]) {
+        UserDefaults.standard.set(scores, forKey: "highScores")
         
-        } else {
-            // Leaderboard doesn't exist in UserDefaults, so create it with the initial value
-            let leaderBoard = [totalPoints]
-            UserDefaults.standard.set(leaderBoard, forKey: "leaderboard")
+    }
+    func getLeaderboard()-> [Int]{
+        if let highScores = UserDefaults.standard.array(forKey: "highScores") as? [Int] {
+                 return highScores
+             } else {
+                 return []
+             }
+        
+    }
+    func addLeaderboard(score: Int){
+        var highScores = getLeaderboard()
+            highScores.append(score)
+            highScores.sort { $0 > $1 } // Sort in descending order (highest score first)
+            if highScores.count > 10 {
+                  highScores = Array(highScores.prefix(10))
+              }
+        storeLeaderboard(scores: highScores)
+        
+    }
+    func getPlaceOfScore(score: Int) -> Int? {
+        let highScores = getLeaderboard()
+        if let index = highScores.firstIndex(of: score) {
+            return index + 1 // Add 1 to convert from zero-based index to position
         }
-        return -1
+        return nil // Score not found in the list
     }
 
 }

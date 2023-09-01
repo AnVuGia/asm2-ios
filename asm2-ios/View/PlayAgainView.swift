@@ -42,8 +42,13 @@ struct PlayAgainView: View {
                     }
                 }
             }.onAppear {
-               let index = saveNotes.storeLeaderboard(totalPoints: score)
-                currentPlace = index
+                print("Play again view")
+                saveNotes.addLeaderboard(score: score)
+                if let index = saveNotes.getPlaceOfScore(score: score) {
+                    currentPlace = index
+                } else {
+                    currentPlace = -1
+                }
             }
         }.navigationBarBackButtonHidden(true)
             .navigationBarHidden(true)
