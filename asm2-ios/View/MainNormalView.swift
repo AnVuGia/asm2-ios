@@ -36,7 +36,20 @@ struct MainNormalView: View {
                     .aspectRatio(contentMode: .fill)
                     .ignoresSafeArea()
                 VStack {
-                    HStack {
+                    HStack{
+                        Spacer()
+                        NavigationLink {
+                            WelcomeView()
+                        } label: {
+                            Image("home-button")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 30)
+                                .clipShape(RoundedRectangle(cornerRadius: 5))
+                                .padding()
+                        }
+                    }.frame(width:UIScreen.main.bounds.width)
+                        HStack {
                         Text("Round \(gameSystem.currentRound)")
                         Spacer()
                         CountdownTimerView(timerModel: gameSystem.timerModel)
@@ -50,17 +63,11 @@ struct MainNormalView: View {
                                 }
                             }
                     }.frame(width: UIScreen.main.bounds.width-50)
-                        TableView(tableModel: gameSystem.table)
-                        ComboBar(comboBarModel: gameSystem.comboBarModel)
-                            .padding(.top, 5)
-                        PointBoard(pointModel: gameSystem.pointBoardModel)
-                    NavigationLink {
-                        WelcomeView()
-                    } label: {
-                        TextButtonUI(content: "Menu")
-                    }
-
-                    }.padding()
+                    TableView(tableModel: gameSystem.table)
+                    ComboBar(comboBarModel: gameSystem.comboBarModel)
+                        .padding(.top, 5)
+                    PointBoard(pointModel: gameSystem.pointBoardModel)
+                }
                 if(gameSystem.table.isDone){
                         if(gameSystem.currentRound < 5){
                             Button("Next Round") {
