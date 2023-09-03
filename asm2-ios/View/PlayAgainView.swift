@@ -26,8 +26,12 @@ struct PlayAgainView: View {
                         .font(.largeTitle)
                     Text("Your score: \(score)")
                         .foregroundColor(Color.white)
-                    Text("You place: #\(currentPlace)")
-                        .foregroundColor(Color.white)
+                    if(currentPlace > 0){
+                        Text("Your place: #\(currentPlace)")
+                            .foregroundColor(Color.white)
+                    } else {
+                        Text("Your place: None")
+                            .foregroundColor(Color.white)                    }
                     NavigationLink(destination: WelcomeView()) {
                         ZStack{
                             Image("button")
@@ -58,6 +62,6 @@ struct PlayAgainView: View {
 
 struct PlayAgainView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayAgainView(score: 1000)
+        PlayAgainView(score: 200)
     }
 }

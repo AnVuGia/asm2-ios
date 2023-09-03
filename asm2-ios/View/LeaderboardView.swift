@@ -36,10 +36,47 @@ struct LeaderboardRow: View {
         }
     }
 }
+struct AchievementListView: View {
+    @ObservedObject var achievementManager: AchievementManager
 
-struct LeaderboardView_Previews: PreviewProvider {
+    var body: some View {
+        NavigationView {
+            List(achievementManager.achievements) { achievement in
+                HStack{
+                    Image(achievement.img)
+                        .padding([.trailing],5)
+                    VStack(alignment: .leading) {
+                        Text(achievement.title)
+                            .font(.title)
+                            .fontWeight(.bold)
+                        Text(achievement.description)
+                        if achievement.isUnlocked {
+                            Text("Unlocked!")
+                                .foregroundColor(.green)
+                        } else {
+                            Text("Locked")
+                                .foregroundColor(.red)
+                        }
+                        
+                    }
+                }
+            }
+            .navigationBarTitle("Achievements")
+        }
+    }
+}
+
+struct HighScoreView : View {
+    var body: some View{
+        ScrollView{
+            LeaderboardView()
+            AchievementListView(achievementManager: achievementManager)
+        }
+    }
+}
+struct HighScoreView_Previews: PreviewProvider {
     static var previews: some View {
-        LeaderboardView()
+        HighScoreView()
     }
 }
 

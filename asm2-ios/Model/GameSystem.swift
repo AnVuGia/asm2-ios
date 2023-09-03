@@ -22,7 +22,6 @@ class GameSystem : ObservableObject {
         self.table.attachComboBar(targetComboBar: comboBarModel)
         self.table.attachTimer(timerModel: timerModel)
         self.difficulty = difficulty
-        self.pointBoardModel.difficultyMulti = difficulty
         }
     func playAgain(){
         self.table = TableModel()
@@ -32,6 +31,8 @@ class GameSystem : ObservableObject {
     }
     func endGame(){
         highScore.append(pointBoardModel.currentPoints)
+        self.checkAchievement()
+        achievementManager.saveAchievements()
     }
     func attachTimerModel(timerModel: TimerModel){
         self.timerModel = timerModel
@@ -71,6 +72,22 @@ class GameSystem : ObservableObject {
         self.difficulty = UserDefaults.standard.integer(forKey: "difficulty")
 
 
+    }
+    func setDifficulty(difficulty: Int){
+        print("gameSystem Diff: \(difficulty)" )
+        self.difficulty = difficulty
+        self.pointBoardModel.setDifficultyMulti(difficulty: difficulty)
+    }
+    func checkAchievement(){
+        if(currentRound >= 5){
+            if(difficulty == 1){
+                achievementManager.achievements[0].isUnlocked = true
+            } else if (difficulty == 2){
+                achievementManager.achievements[1].isUnlocked = true
+            } else if (difficulty == 4) {
+                achievementManager.achievements[2].isUnlocked = true
+            }
+        }
     }
 }
 

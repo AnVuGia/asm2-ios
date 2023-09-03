@@ -12,11 +12,12 @@ struct MainNormalView: View {
 
     @ObservedObject var timerModel = TimerModel(timerCount: 0)
     init(difficulty: Int, isContinue: Bool) {
-
+        gameSystem.setDifficulty(difficulty: difficulty)
         gameSystem.attachTimerModel(timerModel: timerModel)
-        gameSystem.difficulty = difficulty
+        
+        
         if(difficulty == 1) {
-            timerModel.timerCount = 100
+            timerModel.timerCount = 40
         } else if difficulty == 2{
             timerModel.timerCount = 30
         } else if difficulty == 4 {
@@ -83,7 +84,10 @@ struct MainNormalView: View {
                                 }
                         }
                         else {
-                            PlayAgainView(score: gameSystem.pointBoardModel.currentPoints)
+                            PlayAgainView(score: gameSystem.pointBoardModel.currentPoints).onAppear{
+                                print("check achievement")
+                                gameSystem.checkAchievement()
+                            }
                         }
                     }
                 if (gameSystem.timerModel.isOver && gameSystem.timerModel.timerIsRunning){
