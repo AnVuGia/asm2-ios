@@ -74,7 +74,7 @@ class GameSystem : ObservableObject {
 
     }
     func setDifficulty(difficulty: Int){
-        print("gameSystem Diff: \(difficulty)" )
+     
         self.difficulty = difficulty
         self.pointBoardModel.setDifficultyMulti(difficulty: difficulty)
     }

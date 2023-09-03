@@ -25,8 +25,7 @@ struct MainNormalView: View {
         }
         if(isContinue) {
             gameSystem.load()
-            print(gameSystem.table.discardCard)
-            print(gameSystem.table.isClicks)
+    
         }
     }
     var body: some View {
@@ -87,6 +86,7 @@ struct MainNormalView: View {
                             PlayAgainView(score: gameSystem.pointBoardModel.currentPoints).onAppear{
                                 print("check achievement")
                                 gameSystem.checkAchievement()
+                                achievementManager.saveAchievements()
                             }
                         }
                     }
