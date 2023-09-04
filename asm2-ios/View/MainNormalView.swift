@@ -70,17 +70,31 @@ struct MainNormalView: View {
                 }
                 if(gameSystem.table.isDone){
                         if(gameSystem.currentRound < 5){
-                            Button("Next Round") {
+                                                                
+                            Button {
                                 gameSystem.playAgain()
-                                gameSystem.currentRound+=1
-                                gameSystem.table.isDone = false
-                                gameSystem.timerModel.remainingTime = gameSystem.timerModel.timerCount
-                                gameSystem.timerModel.timerCount = gameSystem.timerModel.timerCount - 2
-                                gameSystem.timerModel.timerIsRunning = true
-                            }.background(Color.white)
-                                .onAppear{
-                                    gameSystem.timerModel.timerIsRunning = false
-                                }
+                                                                    gameSystem.currentRound+=1
+                                                                    gameSystem.table.isDone = false
+                                                                    gameSystem.timerModel.remainingTime = gameSystem.timerModel.timerCount
+                                                                    gameSystem.timerModel.timerCount = gameSystem.timerModel.timerCount - 2
+                                                                    gameSystem.timerModel.timerIsRunning = true                            } label: {
+                                ZStack{
+                                    Image("button")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                    Text("Next round")
+                                        .font(.title3)
+                                        .foregroundColor(Color.white)
+                                }.frame(width: 120)
+                                                                    .onAppear{
+                                                                                                                    gameSystem.timerModel.timerIsRunning = false
+                                                                                                                }
+                                                                        
+                                
+                            }
+
+                                    
+                            
                         }
                         else {
                             PlayAgainView(score: gameSystem.pointBoardModel.currentPoints).onAppear{
