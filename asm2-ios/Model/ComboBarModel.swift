@@ -33,6 +33,7 @@ class CombobarModel: ObservableObject {
         print("count: \(currentCombo.count)")
         pointBoard.addPoints(points: basePoints, multiplier: multiplier)
         if(multiplier >= 2){
+            SoundManager.shared.playSound(named: "combo")
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.clearCombo()
             }

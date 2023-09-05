@@ -20,6 +20,9 @@ struct LeaderboardView: View {
                 }
             }
             .navigationBarTitle("Leaderboard")
+            .onAppear{
+                SoundManager.shared.playSound(named: "interface")
+            }
         }
     }
 }

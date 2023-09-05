@@ -10,26 +10,29 @@ import SwiftUI
 struct TimerTutorial: View {
     var body: some View {
         ZStack {
-            Text("3. Timer & Difficulty")
+            Text("5. Timer & Difficulty")
                 .font(.largeTitle)
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height-200, alignment: .top)
-            Grid {
-                GridRow{
-                    Text("Easy Mode: you get 30s for each flip")
-                    Text("Total Score multiplier: x1")
-                }.padding()
-                GridRow{
-                    Text("Normal Mode: you get 20s for each flip")
-                    Text("Total Score multiplier: x2")
-                }.padding()
-                GridRow{
-                    Text("Hard Mode: you get 10 for each flip, each round decrease the timer count by 2s")
-                    Text("Total Score multiplier: x4")
+            VStack {
+                Grid {
+                    GridRow{
+                        Text("Easy Mode: you get 40s for each flip")
+                        Text("Score multiplier: x1")
+                    }.padding()
+                    GridRow{
+                        Text("Normal Mode: you get 30s for each flip")
+                        Text("Score multiplier: x2")
+                    }.padding()
+                    GridRow{
+                        Text("Hard Mode: you get 15 for each flip")
+                        Text("Score multiplier: x4")
 
-                }.padding()
+                    }.padding()
+                }
+                Text("Each round reduce the timer by 2s")
             }
+            
     
-               
         }
 
     }

@@ -8,50 +8,116 @@
 import SwiftUI
 
 struct WelcomeView: View {
-    @State private var isStart = false
-    @State private var navigationNextView = false
-    @State private var difficulty = 1
+    @State private var selectedTab = 0
+   
     var body: some View {
         NavigationStack {
             ZStack {
-                Image("welcome-background")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: UIScreen.main.bounds.width-100)
+                ZStack {
+                    Image("welcome-background")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: UIScreen.main.bounds.width-100, height: UIScreen.main.bounds.height)
                     .ignoresSafeArea()
-                    
-
                     Image("poke-logo")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: UIScreen.main.bounds.width - 30,height: UIScreen.main.bounds.height-200, alignment: .top)
                         .shadow(color: Color.yellow, radius: 13)
-                        
-                        ZStack {
-                            ShiningView(isShining: $isStart, shineColor: Color.white, size: 100, shadowSize: 15)
-                            Image("poke-ball")
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                            .frame(width: 130, height: 100)
-                            .onAppear {
-                                isStart = true
-                            }
-                        }.rotationEffect(.degrees(isStart ? 360 : 0))
-                            .animation(.linear(duration: 2).repeatForever(autoreverses: false), value: isStart)
-                            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height+20, alignment: .center)
+                }
+                            VStack {
+                                Spacer()
+                                HStack {
+                                    Button {
+                                        if selectedTab > 0 {
+                                            SoundManager.shared.playSound(named: "interface")
+                                        selectedTab -= 1
+                                        }
+                                    } label: {
+                                        Image("prev-button")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: 50)
+                                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                                    }.disabled(selectedTab == 0)
+
+                                    TabView(selection: $selectedTab) {
+                                            firstTabView().tag(0)
+                                            secondTabView().tag(1)
+                                        }
+                                    .frame(width: UIScreen.main.bounds.width-150, height: 360)
+                                    Button {
+                                        if selectedTab < 1 {
+                                            SoundManager.shared.playSound(named: "interface")
+                                            selectedTab += 1
+                                        }
+                                    } label: {
+                                        Image("next-button")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: 50)
+                                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                                    }.disabled(selectedTab == 1)
+
+                                    
+                                }
+                
+                            }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+                
+                    
+                    
+                       }
+            .onAppear{
+                SoundManager.shared.stopAllSounds()
+                SoundManager.shared.playSound(named: "welcome-theme", volume: 0.5, isLooping: true)
+            }
+        }
+        .navigationBarBackButtonHidden(true)
+            .navigationBarHidden(true)
+
+    }
+}
+struct firstTabView : View {
+    @State private var difficulty : Int = 1
+    var body: some View {
+        NavigationStack {
+            ZStack {
+                Color("background-welcome")
+                HStack {
+                   
+                    VStack{
+                        NavigationLink(destination: MainNormalView(difficulty: difficulty, isContinue: false), label: {
+                            TextButtonUI(content: "Game Start")
+                        })
+                        .padding([.bottom], 6)
                             
-                    
-                VStack{
-                    NavigationLink(destination: MainNormalView(difficulty: difficulty, isContinue: false), label: {
-                        TextButtonUI(content: "Game Start")
-                        
-                    })
-                    NavigationLink {
-                        MainNormalView(difficulty: difficulty, isContinue: true)
-                    } label: {
-                        TextButtonUI(content: "Continue")
+                        NavigationLink {
+                            MainNormalView(difficulty: difficulty, isContinue: true)
+                        } label: {
+                            TextButtonUI(content: "Continue")
+                        }.padding([.bottom], 6)
+                        NavigationLink {
+                            DifficultyView(difficulty: $difficulty)
+                        } label: {
+                            TextButtonUI(content: "Setting")
+                        }.padding([.bottom], 6)
+
                     }
-                    
+                
+
+                }
+            }.ignoresSafeArea()
+        }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarHidden(true)
+    }
+}
+struct secondTabView : View {
+    var body: some View {
+        NavigationStack {
+            ZStack {
+                Color("background-welcome")
+                VStack{
                     NavigationLink {
                         TutorialView()
                     } label: {
@@ -62,20 +128,10 @@ struct WelcomeView: View {
                     } label: {
                         TextButtonUI(content: "Leaderboard")
                     }
-                    NavigationLink {
-                        DifficultyView(difficulty: $difficulty)
-                    } label: {
-                        TextButtonUI(content: "Setting")
-                    }
-                   
-                }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height-80, alignment: .bottom)
-                    Spacer()
-            }
-        }.onDisappear(){
-        }
-        .navigationBarBackButtonHidden(true)
+                }
+            }.ignoresSafeArea()
+        }.navigationBarBackButtonHidden(true)
             .navigationBarHidden(true)
-
     }
 }
 

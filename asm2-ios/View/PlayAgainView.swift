@@ -10,6 +10,7 @@ import SwiftUI
 struct PlayAgainView: View {
     var score :Int
     @State private var currentPlace = 0
+    private let normalCustomFont : Font = Font.custom("Silver", size: 40)
     init(score: Int) {
         self.score = score
     }
@@ -23,29 +24,36 @@ struct PlayAgainView: View {
                 VStack {
                     Text("GAME OVER")
                         .foregroundColor(Color.white)
-                        .font(.largeTitle)
+                        .font(.custom("Silver", size: 90))
                     Text("Your score: \(score)")
                         .foregroundColor(Color.white)
+                        .font(normalCustomFont)
                     if(currentPlace > 0){
                         Text("Your place: #\(currentPlace)")
                             .foregroundColor(Color.white)
+                            .font(normalCustomFont)
                     } else {
                         Text("Your place: None")
-                            .foregroundColor(Color.white)                    }
+                            .foregroundColor(Color.white)
+                            .font(normalCustomFont)
+                    }
                     NavigationLink(destination: WelcomeView()) {
                         ZStack{
                             Image("button")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: 100)
+                                .frame(width: 150)
                             Text("Play Again")
                                 .foregroundColor(Color.white)
+                                .font(normalCustomFont)
                             
                         }
                         
                     }
                 }
             }.onAppear {
+                SoundManager.shared.stopAllSounds()
+                SoundManager.shared.playSound(named: "end")
                 print("Play again view")
                 saveNotes.addLeaderboard(score: score)
                 if let index = saveNotes.getPlaceOfScore(score: score) {

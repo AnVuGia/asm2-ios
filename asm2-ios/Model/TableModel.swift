@@ -50,6 +50,7 @@ class TableModel: ObservableObject {
         
         // Toggle the card's state
         isClicks[row][column].toggle()
+        SoundManager.shared.playSound(named: "flipcard")
         timerModel.start()
         // Store the selected card's position
         playerCurrentCards[clickCount] = [row, column]
@@ -60,6 +61,7 @@ class TableModel: ObservableObject {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 // Check matching cards
                 if self.checkSameCard() {
+                    SoundManager.shared.playSound(named: "match")
                     let pokemon = pokemonData[self.cards[row][column]]
                     self.comboBarModel.addCombo(element: pokemon.type)
                     self.discardCard.append(self.cards[row][column])

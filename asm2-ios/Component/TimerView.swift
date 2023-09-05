@@ -5,7 +5,7 @@ struct CountdownTimerView: View {
     var body: some View {
         VStack {
             Text("\(timeString(timerModel.remainingTime))")
-                .font(.system(size: 30))
+                .font(.custom("Silver", size: 50))
                 .foregroundColor(timerModel.timerIsRunning ? .red : .black)
 
             

@@ -31,7 +31,7 @@ struct ComboTutorial2: View {
                 Text("If you get a combo that is not in the combo, you will get a Resonance orb, if you already have a Resonance orb, you will get a Chaos orb instead!")
                     .padding()
                 HStack {
-                    Text("You can get 3 of the same kind to get a special multiplier!")
+                    Text("If you get both orbs, the next combo you make will have a massive multiplier!")
                     Image("fullcombo")
                          .resizable()
                          .aspectRatio(contentMode: .fit)

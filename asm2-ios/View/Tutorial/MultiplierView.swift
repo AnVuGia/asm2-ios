@@ -10,13 +10,13 @@ import SwiftUI
 struct MultiplierView: View {
     var body: some View {
         ZStack {
-            Text("3. Score Multiplier")
+            Text("4. Score Multiplier")
                 .font(.largeTitle)
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height-200, alignment: .top)
             Grid{
                 GridRow{
                     Text("Base point: ")
-                   Text(" 200 (+200 each round)")
+                   Text("200")
                 }.padding()
                 GridRow{
                     Text("3 of a kind: ")

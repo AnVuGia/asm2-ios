@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		D632E6CF2AA1C9B4003C1446 /* AchievementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D632E6CE2AA1C9B4003C1446 /* AchievementManager.swift */; };
 		D67B36532AA089C7003652A1 /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67B36522AA089C7003652A1 /* LeaderboardView.swift */; };
+		E30C9C8D2AA6E55C0063DB11 /* Silver.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E30C9C8C2AA6E55C0063DB11 /* Silver.ttf */; };
+		E30C9C902AA708220063DB11 /* PikachuTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30C9C8F2AA708220063DB11 /* PikachuTutorialView.swift */; };
+		E30C9C922AA714010063DB11 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30C9C912AA714010063DB11 /* SoundManager.swift */; };
+		E30C9C952AA717470063DB11 /* flipcard.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E30C9C942AA717470063DB11 /* flipcard.mp3 */; };
+		E30C9C972AA717ED0063DB11 /* main-theme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E30C9C962AA717EC0063DB11 /* main-theme.mp3 */; };
+		E30C9C992AA719570063DB11 /* interface.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E30C9C982AA719560063DB11 /* interface.mp3 */; };
+		E30C9C9B2AA71CF80063DB11 /* match.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E30C9C9A2AA71CF80063DB11 /* match.mp3 */; };
+		E30C9C9D2AA71E650063DB11 /* combo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E30C9C9C2AA71E640063DB11 /* combo.mp3 */; };
+		E30C9C9F2AA724E20063DB11 /* end.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E30C9C9E2AA724E20063DB11 /* end.mp3 */; };
+		E30C9CA12AA726300063DB11 /* welcome-theme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E30C9CA02AA7262F0063DB11 /* welcome-theme.mp3 */; };
 		E33A329A2A93264200F98879 /* PokeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33A32992A93264200F98879 /* PokeCard.swift */; };
 		E33A329C2A9327CE00F98879 /* PokeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33A329B2A9327CE00F98879 /* PokeCardView.swift */; };
 		E33A32A12A9340CD00F98879 /* CardBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33A32A02A9340CD00F98879 /* CardBack.swift */; };
@@ -69,6 +79,17 @@
 /* Begin PBXFileReference section */
 		D632E6CE2AA1C9B4003C1446 /* AchievementManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementManager.swift; sourceTree = "<group>"; };
 		D67B36522AA089C7003652A1 /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
+		E30C9C8C2AA6E55C0063DB11 /* Silver.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Silver.ttf; sourceTree = "<group>"; };
+		E30C9C8E2AA6E67D0063DB11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E30C9C8F2AA708220063DB11 /* PikachuTutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PikachuTutorialView.swift; sourceTree = "<group>"; };
+		E30C9C912AA714010063DB11 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		E30C9C942AA717470063DB11 /* flipcard.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = flipcard.mp3; sourceTree = "<group>"; };
+		E30C9C962AA717EC0063DB11 /* main-theme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "main-theme.mp3"; sourceTree = "<group>"; };
+		E30C9C982AA719560063DB11 /* interface.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = interface.mp3; sourceTree = "<group>"; };
+		E30C9C9A2AA71CF80063DB11 /* match.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = match.mp3; sourceTree = "<group>"; };
+		E30C9C9C2AA71E640063DB11 /* combo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = combo.mp3; sourceTree = "<group>"; };
+		E30C9C9E2AA724E20063DB11 /* end.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = end.mp3; sourceTree = "<group>"; };
+		E30C9CA02AA7262F0063DB11 /* welcome-theme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "welcome-theme.mp3"; sourceTree = "<group>"; };
 		E33A32992A93264200F98879 /* PokeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeCard.swift; sourceTree = "<group>"; };
 		E33A329B2A9327CE00F98879 /* PokeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeCardView.swift; sourceTree = "<group>"; };
 		E33A32A02A9340CD00F98879 /* CardBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBack.swift; sourceTree = "<group>"; };
@@ -110,7 +131,6 @@
 		E3AE353C2A94AA5400B57D93 /* GameSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSystem.swift; sourceTree = "<group>"; };
 		E3AE353E2A94AB8300B57D93 /* PointCalculatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointCalculatorModel.swift; sourceTree = "<group>"; };
 		E3AE35402A94AC9800B57D93 /* PointBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointBoard.swift; sourceTree = "<group>"; };
-		E3AE35442A94BAEF00B57D93 /* Silver.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Silver.ttf; sourceTree = "<group>"; };
 		E3B9EA252A9C819D0023221C /* DifficultyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,9 +159,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E30C9C892AA6E5220063DB11 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E30C9C8C2AA6E55C0063DB11 /* Silver.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		E30C9C932AA7142A0063DB11 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				E30C9C9C2AA71E640063DB11 /* combo.mp3 */,
+				E30C9C9A2AA71CF80063DB11 /* match.mp3 */,
+				E30C9C9E2AA724E20063DB11 /* end.mp3 */,
+				E30C9CA02AA7262F0063DB11 /* welcome-theme.mp3 */,
+				E30C9C982AA719560063DB11 /* interface.mp3 */,
+				E30C9C962AA717EC0063DB11 /* main-theme.mp3 */,
+				E30C9C942AA717470063DB11 /* flipcard.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		E33A32A22A93480B00F98879 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				E30C9C932AA7142A0063DB11 /* Sounds */,
 				E33A32A62A93488A00F98879 /* poke-data.json */,
 				E39FF7662A9DE2D50008A63B /* save-notes.json */,
 			);
@@ -171,7 +214,8 @@
 		E360E70B2A8F36030057CE20 /* asm2-ios */ = {
 			isa = PBXGroup;
 			children = (
-				E3AE35442A94BAEF00B57D93 /* Silver.ttf */,
+				E30C9C8E2AA6E67D0063DB11 /* Info.plist */,
+				E30C9C892AA6E5220063DB11 /* Fonts */,
 				E3AE35352A94776300B57D93 /* Component */,
 				E33A32A22A93480B00F98879 /* Data */,
 				E360E73B2A8F51EF0057CE20 /* UI */,
@@ -237,6 +281,7 @@
 				E36AAAD72A98809100C50349 /* TimerModel.swift */,
 				E39FF7642A9DDACD0008A63B /* SaveNotes.swift */,
 				D632E6CE2AA1C9B4003C1446 /* AchievementManager.swift */,
+				E30C9C912AA714010063DB11 /* SoundManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -261,6 +306,7 @@
 				E36AAAE22A989A6C00C50349 /* ComboTutorial2.swift */,
 				E36AAAE42A989DC200C50349 /* MultiplierView.swift */,
 				E36AAAE62A98A03400C50349 /* TimerTutorial.swift */,
+				E30C9C8F2AA708220063DB11 /* PikachuTutorialView.swift */,
 			);
 			path = Tutorial;
 			sourceTree = "<group>";
@@ -382,10 +428,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E30C9C9B2AA71CF80063DB11 /* match.mp3 in Resources */,
 				E39FF7672A9DE2D50008A63B /* save-notes.json in Resources */,
 				E360E7152A8F36040057CE20 /* Preview Assets.xcassets in Resources */,
+				E30C9C9D2AA71E650063DB11 /* combo.mp3 in Resources */,
+				E30C9C8D2AA6E55C0063DB11 /* Silver.ttf in Resources */,
+				E30C9C952AA717470063DB11 /* flipcard.mp3 in Resources */,
+				E30C9C9F2AA724E20063DB11 /* end.mp3 in Resources */,
+				E30C9C992AA719570063DB11 /* interface.mp3 in Resources */,
 				E360E7112A8F36040057CE20 /* Assets.xcassets in Resources */,
+				E30C9C972AA717ED0063DB11 /* main-theme.mp3 in Resources */,
 				E33A32A72A93488A00F98879 /* poke-data.json in Resources */,
+				E30C9CA12AA726300063DB11 /* welcome-theme.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +472,7 @@
 				E36AAAE72A98A03400C50349 /* TimerTutorial.swift in Sources */,
 				E33A32A92A934AE300F98879 /* TableView.swift in Sources */,
 				E33A32A12A9340CD00F98879 /* CardBack.swift in Sources */,
+				E30C9C902AA708220063DB11 /* PikachuTutorialView.swift in Sources */,
 				E33A32AD2A93693B00F98879 /* PokeData.swift in Sources */,
 				E36AAADA2A988FED00C50349 /* TutorialView.swift in Sources */,
 				E360E7452A8F7CFD0057CE20 /* EmtyView.swift in Sources */,
@@ -428,6 +483,7 @@
 				E36AAAE32A989A6C00C50349 /* ComboTutorial2.swift in Sources */,
 				E33A329A2A93264200F98879 /* PokeCard.swift in Sources */,
 				E36AAADD2A98918F00C50349 /* TutorialFlip.swift in Sources */,
+				E30C9C922AA714010063DB11 /* SoundManager.swift in Sources */,
 				E3B9EA262A9C819D0023221C /* DifficultyView.swift in Sources */,
 				E33A32AB2A9352C700F98879 /* MainNormalView.swift in Sources */,
 				E3AE35392A94865900B57D93 /* ComboBarModel.swift in Sources */,
@@ -599,7 +655,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"asm2-ios/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "";
+				INFOPLIST_FILE = "asm2-ios/Info.plist";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -636,7 +692,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"asm2-ios/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "";
+				INFOPLIST_FILE = "asm2-ios/Info.plist";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

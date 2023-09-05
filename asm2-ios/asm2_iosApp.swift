@@ -10,9 +10,11 @@ import SwiftUI
 @main
 
 struct asm2_iosApp: App {
+    static let customFont: Font = Font.custom("Silver", size: 20)
     var body: some Scene {
         WindowGroup {
             WelcomeView()
+                .environment(\.font, Font.custom("Silver", size: 20))
             
         }
     }

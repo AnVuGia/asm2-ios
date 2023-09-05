@@ -51,6 +51,7 @@ struct MainNormalView: View {
                     }.frame(width:UIScreen.main.bounds.width)
                         HStack {
                         Text("Round \(gameSystem.currentRound)")
+                                .font(.custom("Silver", size: 30))
                         Spacer()
                         CountdownTimerView(timerModel: gameSystem.timerModel)
                             .onReceive(gameSystem.timerModel.timer) { _ in
@@ -111,7 +112,12 @@ struct MainNormalView: View {
                 }
                 .navigationBarBackButtonHidden(true)
             .navigationBarHidden(true)
+        }.onAppear {
+            SoundManager.shared.stopAllSounds()
+            SoundManager.shared.playSound(named: "interface")
+            SoundManager.shared.playSound(named: "main-theme", volume: 0.2, isLooping: true)
         }
+      
             
         }
         

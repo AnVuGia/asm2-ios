@@ -42,13 +42,16 @@ struct TutorialView: View {
             TutorialFlip()
             ComboTutorial()
             ComboTutorial2()
+            PikachuTutorialView()
             MultiplierView()
             TimerTutorial()
         }
+        .onAppear{
+            SoundManager.shared.playSound(named: "interface")
+        }
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
         .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
-    }
-}
+    }}
 
 struct TutorialView_Previews: PreviewProvider {
     static var previews: some View {

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DifficultyView: View {
-    
+    private let normalCustomFont : Font = Font.custom("Silver", size: 60)
     @Binding var difficulty : Int
     @State var currentDifficulty = "Easy"
     var body: some View {
@@ -18,7 +18,7 @@ struct DifficultyView: View {
                 .opacity(0.7)
             VStack{
                 Text("Current difficulty: \(currentDifficulty)")
-                    .font(.largeTitle)
+                    .font(.custom("Silver", size: 50))
                     .foregroundColor(Color.white)
                 Button {
                     difficulty = 1
@@ -31,7 +31,7 @@ struct DifficultyView: View {
                             .frame(width: 200)
                             .clipShape(RoundedRectangle(cornerRadius: 15))
                         Text("Easy")
-                            .font(.largeTitle)
+                            .font(normalCustomFont)
                             .foregroundColor(Color.black)
                     }
                 }
@@ -46,7 +46,7 @@ struct DifficultyView: View {
                             .frame(width: 200)
                             .clipShape(RoundedRectangle(cornerRadius: 15))
                         Text("Normal")
-                            .font(.largeTitle)
+                            .font(normalCustomFont)
                             .foregroundColor(Color.black)
                     }
                 }
@@ -61,12 +61,14 @@ struct DifficultyView: View {
                             .frame(width: 200)
                             .clipShape(RoundedRectangle(cornerRadius: 15))
                         Text("Hard")
-                            .font(.largeTitle)
+                            .font(normalCustomFont)
                             .foregroundColor(Color.black)
                     }
                 }
 
             }
+        }.onAppear{
+            SoundManager.shared.playSound(named: "interface")
         }
     }
 }
