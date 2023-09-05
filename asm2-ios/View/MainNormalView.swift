@@ -9,12 +9,12 @@ import SwiftUI
 
 struct MainNormalView: View {
     @ObservedObject var gameSystem = GameSystem(difficulty: 1)
-
+    @Environment(\.colorScheme) var colorScheme
     @ObservedObject var timerModel = TimerModel(timerCount: 0)
-    init(difficulty: Int, isContinue: Bool) {
+    init(difficulty: Int, isContinue: Bool, playerName: String) {
         gameSystem.setDifficulty(difficulty: difficulty)
         gameSystem.attachTimerModel(timerModel: timerModel)
-        
+        gameSystem.setPlayerName(playerName: playerName)
         
         if(difficulty == 1) {
             timerModel.timerCount = 40
@@ -31,10 +31,19 @@ struct MainNormalView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Image("background7x7")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .ignoresSafeArea()
+                if colorScheme == .dark {
+                    Image("night-background")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .ignoresSafeArea()
+
+                } else {
+                    Image("background7x7")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .ignoresSafeArea()
+
+                }
                 VStack {
                     HStack{
                         Spacer()
@@ -117,6 +126,9 @@ struct MainNormalView: View {
             SoundManager.shared.playSound(named: "interface")
             SoundManager.shared.playSound(named: "main-theme", volume: 0.2, isLooping: true)
         }
+        .onDisappear{
+            gameSystem.timerModel.timerIsRunning = false
+        }
       
             
         }
@@ -126,6 +138,6 @@ struct MainNormalView: View {
 
 struct MainNormalView_Previews: PreviewProvider {
     static var previews: some View {
-        MainNormalView(difficulty: 4, isContinue: false)
+        MainNormalView(difficulty: 4, isContinue: false, playerName: "test")
     }
 }

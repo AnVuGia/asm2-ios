@@ -13,7 +13,7 @@ class GameSystem : ObservableObject {
     @Published var comboBarModel = CombobarModel()
     @Published var table = TableModel()
     @Published var timerModel = TimerModel(timerCount: 10)
-
+    @State var playerName : String = "New player"
     @State var highScore : [Int] = []
     @State var difficulty : Int = 1
     @Published var currentRound : Int = 1
@@ -30,7 +30,6 @@ class GameSystem : ObservableObject {
         table.attachTimer(timerModel: timerModel)
     }
     func endGame(){
-        highScore.append(pointBoardModel.currentPoints)
         self.checkAchievement()
         achievementManager.saveAchievements()
     }
@@ -77,6 +76,9 @@ class GameSystem : ObservableObject {
      
         self.difficulty = difficulty
         self.pointBoardModel.setDifficultyMulti(difficulty: difficulty)
+    }
+    func setPlayerName(playerName: String){
+        self.playerName = playerName
     }
     func checkAchievement(){
         if(currentRound >= 5){

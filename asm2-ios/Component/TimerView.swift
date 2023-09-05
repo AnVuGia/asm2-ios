@@ -2,11 +2,12 @@ import SwiftUI
 
 struct CountdownTimerView: View {
     @ObservedObject var timerModel : TimerModel
+    @Environment(\.colorScheme) var colorScheme
     var body: some View {
         VStack {
             Text("\(timeString(timerModel.remainingTime))")
                 .font(.custom("Silver", size: 50))
-                .foregroundColor(timerModel.timerIsRunning ? .red : .black)
+                .foregroundColor(timerModel.timerIsRunning ? .red : colorScheme == .dark ? .white : .black)
 
             
         }

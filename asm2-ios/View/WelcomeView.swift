@@ -9,7 +9,6 @@ import SwiftUI
 
 struct WelcomeView: View {
     @State private var selectedTab = 0
-   
     var body: some View {
         NavigationStack {
             ZStack {
@@ -79,6 +78,7 @@ struct WelcomeView: View {
 }
 struct firstTabView : View {
     @State private var difficulty : Int = 1
+    @State private var playerName = "Unknown"
     var body: some View {
         NavigationStack {
             ZStack {
@@ -86,18 +86,18 @@ struct firstTabView : View {
                 HStack {
                    
                     VStack{
-                        NavigationLink(destination: MainNormalView(difficulty: difficulty, isContinue: false), label: {
+                        NavigationLink(destination: MainNormalView(difficulty: difficulty, isContinue: false, playerName: playerName), label: {
                             TextButtonUI(content: "Game Start")
                         })
                         .padding([.bottom], 6)
                             
                         NavigationLink {
-                            MainNormalView(difficulty: difficulty, isContinue: true)
+                            MainNormalView(difficulty: difficulty, isContinue: true, playerName: playerName)
                         } label: {
                             TextButtonUI(content: "Continue")
                         }.padding([.bottom], 6)
                         NavigationLink {
-                            DifficultyView(difficulty: $difficulty)
+                            DifficultyView(difficulty: $difficulty, playerName: $playerName)
                         } label: {
                             TextButtonUI(content: "Setting")
                         }.padding([.bottom], 6)

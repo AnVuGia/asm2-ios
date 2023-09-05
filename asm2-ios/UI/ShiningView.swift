@@ -11,7 +11,8 @@ struct ShiningView: View {
     @Binding var isShining : Bool
     var shineColor : Color
     var size : CGFloat
-    var shadowSize: CGFloat
+    @State var shadowSize: CGFloat
+    @Environment(\.colorScheme) var colorScheme
     var body: some View {
         VStack {
             Circle()
@@ -35,6 +36,10 @@ struct ShiningView: View {
                 )
                 .shadow(color: shineColor, radius: isShining ? shadowSize : 0)
                 .animation(.easeInOut(duration: 1).repeatForever(autoreverses: true),value: isShining)            
+        }.onAppear{
+            if colorScheme == .dark {
+                shadowSize = shadowSize-5
+            }
         }
     }
 }
