@@ -14,9 +14,9 @@ struct LeaderboardView: View {
                 Text("Top 10 All-Time").font(.largeTitle)
                 
                 // Retrieve the top 10 high scores
-                ForEach(0..<min(10, saveNotes.getLeaderboard().count), id: \.self) { index in
-                    let score = saveNotes.getLeaderboard()[index]
-                    LeaderboardRow(score: score, position: index + 1)
+                ForEach(0..<min(10, leaderboardManager.getLeaderboard().count), id: \.self) { index in
+                    let entry = leaderboardManager.getLeaderboard()[index]
+                    LeaderboardRow(username: entry.username, score: entry.score, position: index + 1)
                 }
             }
             .navigationBarTitle("Leaderboard")
@@ -28,6 +28,7 @@ struct LeaderboardView: View {
 }
 
 struct LeaderboardRow: View {
+    let username: String
     let score: Int
     let position: Int
     
@@ -35,7 +36,9 @@ struct LeaderboardRow: View {
         HStack {
             Text("\(position)").font(.headline)
             Spacer()
+            Text("\(username):").font(.body)
             Text("Score: \(score)").font(.body)
+            Spacer()
         }
     }
 }

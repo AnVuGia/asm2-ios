@@ -19,6 +19,7 @@
 		E30C9C9D2AA71E650063DB11 /* combo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E30C9C9C2AA71E640063DB11 /* combo.mp3 */; };
 		E30C9C9F2AA724E20063DB11 /* end.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E30C9C9E2AA724E20063DB11 /* end.mp3 */; };
 		E30C9CA12AA726300063DB11 /* welcome-theme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E30C9CA02AA7262F0063DB11 /* welcome-theme.mp3 */; };
+		E30C9CA32AA741ED0063DB11 /* LeaderboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30C9CA22AA741ED0063DB11 /* LeaderboardManager.swift */; };
 		E33A329A2A93264200F98879 /* PokeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33A32992A93264200F98879 /* PokeCard.swift */; };
 		E33A329C2A9327CE00F98879 /* PokeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33A329B2A9327CE00F98879 /* PokeCardView.swift */; };
 		E33A32A12A9340CD00F98879 /* CardBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33A32A02A9340CD00F98879 /* CardBack.swift */; };
@@ -90,6 +91,7 @@
 		E30C9C9C2AA71E640063DB11 /* combo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = combo.mp3; sourceTree = "<group>"; };
 		E30C9C9E2AA724E20063DB11 /* end.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = end.mp3; sourceTree = "<group>"; };
 		E30C9CA02AA7262F0063DB11 /* welcome-theme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "welcome-theme.mp3"; sourceTree = "<group>"; };
+		E30C9CA22AA741ED0063DB11 /* LeaderboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardManager.swift; sourceTree = "<group>"; };
 		E33A32992A93264200F98879 /* PokeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeCard.swift; sourceTree = "<group>"; };
 		E33A329B2A9327CE00F98879 /* PokeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeCardView.swift; sourceTree = "<group>"; };
 		E33A32A02A9340CD00F98879 /* CardBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBack.swift; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 				E39FF7642A9DDACD0008A63B /* SaveNotes.swift */,
 				D632E6CE2AA1C9B4003C1446 /* AchievementManager.swift */,
 				E30C9C912AA714010063DB11 /* SoundManager.swift */,
+				E30C9CA22AA741ED0063DB11 /* LeaderboardManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 				E3AE35372A94777D00B57D93 /* ComboBar.swift in Sources */,
 				E360E7412A8F69DD0057CE20 /* ShiningView.swift in Sources */,
 				D632E6CF2AA1C9B4003C1446 /* AchievementManager.swift in Sources */,
+				E30C9CA32AA741ED0063DB11 /* LeaderboardManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

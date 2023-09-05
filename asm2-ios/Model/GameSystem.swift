@@ -13,7 +13,7 @@ class GameSystem : ObservableObject {
     @Published var comboBarModel = CombobarModel()
     @Published var table = TableModel()
     @Published var timerModel = TimerModel(timerCount: 10)
-    @State var playerName : String = "New player"
+    @Published var playerName : String = ""
     @State var highScore : [Int] = []
     @State var difficulty : Int = 1
     @Published var currentRound : Int = 1
@@ -69,7 +69,13 @@ class GameSystem : ObservableObject {
         
         self.currentRound = UserDefaults.standard.integer(forKey: "currentRound")
         self.difficulty = UserDefaults.standard.integer(forKey: "difficulty")
-
+        if let playerName = UserDefaults.standard.string(forKey: "playerName") {
+            // Use the retrieved playerName
+            print("Player Name: \(playerName)")
+        } else {
+            // Player name not found in UserDefaults, handle this case accordingly
+            print("Player Name not found.")
+        }
 
     }
     func setDifficulty(difficulty: Int){
@@ -92,5 +98,4 @@ class GameSystem : ObservableObject {
         }
     }
 }
-
 

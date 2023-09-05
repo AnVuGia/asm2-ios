@@ -41,30 +41,6 @@ class SaveNotes {
         UserDefaults.standard.set(scores, forKey: "highScores")
         
     }
-    func getLeaderboard()-> [Int]{
-        if let highScores = UserDefaults.standard.array(forKey: "highScores") as? [Int] {
-                 return highScores
-             } else {
-                 return []
-             }
-        
-    }
-    func addLeaderboard(score: Int){
-        var highScores = getLeaderboard()
-            highScores.append(score)
-            highScores.sort { $0 > $1 } // Sort in descending order (highest score first)
-            if highScores.count > 10 {
-                  highScores = Array(highScores.prefix(10))
-              }
-        storeLeaderboard(scores: highScores)
-        
-    }
-    func getPlaceOfScore(score: Int) -> Int? {
-        let highScores = getLeaderboard()
-        if let index = highScores.firstIndex(of: score) {
-            return index + 1 // Add 1 to convert from zero-based index to position
-        }
-        return nil // Score not found in the list
-    }
+
 
 }

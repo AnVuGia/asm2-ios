@@ -15,7 +15,7 @@ struct MainNormalView: View {
         gameSystem.setDifficulty(difficulty: difficulty)
         gameSystem.attachTimerModel(timerModel: timerModel)
         gameSystem.setPlayerName(playerName: playerName)
-        
+        UserDefaults.standard.set(playerName, forKey: "playerName")
         if(difficulty == 1) {
             timerModel.timerCount = 40
         } else if difficulty == 2{
@@ -107,7 +107,7 @@ struct MainNormalView: View {
                             
                         }
                         else {
-                            PlayAgainView(score: gameSystem.pointBoardModel.currentPoints).onAppear{
+                            PlayAgainView(score: gameSystem.pointBoardModel.currentPoints, playerName: gameSystem.playerName).onAppear{
                                 print("check achievement")
                                 gameSystem.checkAchievement()
                                 achievementManager.saveAchievements()
@@ -115,7 +115,7 @@ struct MainNormalView: View {
                         }
                     }
                 if (gameSystem.timerModel.isOver && gameSystem.timerModel.timerIsRunning){
-                        PlayAgainView(score: gameSystem.pointBoardModel.currentPoints)
+                    PlayAgainView(score: gameSystem.pointBoardModel.currentPoints, playerName:  gameSystem.playerName)
                     }
                     
                 }

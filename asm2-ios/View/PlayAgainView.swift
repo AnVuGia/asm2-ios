@@ -11,8 +11,10 @@ struct PlayAgainView: View {
     var score :Int
     @State private var currentPlace = 0
     private let normalCustomFont : Font = Font.custom("Silver", size: 40)
-    init(score: Int) {
+    let playerName : String
+    init(score: Int, playerName : String) {
         self.score = score
+        self.playerName = playerName
     }
     var body: some View {
         NavigationStack{
@@ -55,8 +57,8 @@ struct PlayAgainView: View {
                 SoundManager.shared.stopAllSounds()
                 SoundManager.shared.playSound(named: "end")
                 print("Play again view")
-                saveNotes.addLeaderboard(score: score)
-                if let index = saveNotes.getPlaceOfScore(score: score) {
+                leaderboardManager.addLeaderboard(username: playerName , score: score)
+                if let index = leaderboardManager.getPlaceOfScore(score: score) {
                     currentPlace = index
                 } else {
                     currentPlace = -1
@@ -70,6 +72,6 @@ struct PlayAgainView: View {
 
 struct PlayAgainView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayAgainView(score: 200)
+        PlayAgainView(score: 200, playerName: "test")
     }
 }
