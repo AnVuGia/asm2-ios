@@ -25,9 +25,6 @@ struct CardBack: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 70, height: 90)
-                    Text("\(pokeCard.name)")
-                        .foregroundColor(Color.black)
-                        .background(Color.white)
                 }.opacity(flipped ? 0 : 1.0)
             }.modifier(FlipEffect(flipped: $flipped, angle: isClick ? 180 : 0, axis: (x: 0, y: 1)))
         }
