@@ -13,13 +13,15 @@
 import SwiftUI
 
 struct LeaderboardView: View {
+    let lang = UserDefaults.standard.string(forKey: "lang")
     var body: some View {
+        if lang == "ENG" {
         NavigationView {
-            List {
-                Text("Top 10 All-Time").font(.largeTitle)
-                
-                // Retrieve the top 10 high scores
-                                    Grid{
+              List {
+                    Text("Top 10 All-Time").font(.largeTitle)
+                    
+                    // Retrieve the top 10 high scores
+                    Grid{
                         ForEach(0..<min(10, leaderboardManager.getLeaderboard().count), id: \.self) { index in
                             let entry = leaderboardManager.getLeaderboard()[index]
                             GridRow{
@@ -36,8 +38,38 @@ struct LeaderboardView: View {
                     .navigationBarTitle("Leaderboard")
                     .onAppear{
                         SoundManager.shared.playSound(named: "interface")
+                    }
+                    
                 }
-                
+            }
+            }
+            else {
+                NavigationView{
+                List {
+                    Text("Top 10 Toàn thời gian").font(.largeTitle)
+                    
+                    // Retrieve the top 10 high scores
+                    Grid{
+                        ForEach(0..<min(10, leaderboardManager.getLeaderboard().count), id: \.self) { index in
+                            let entry = leaderboardManager.getLeaderboard()[index]
+                            GridRow{
+                                Text("\(index+1)").font(.headline)
+                                Spacer()
+                                Text("\(entry.username):").font(.body)
+                                Spacer()
+                                Text("Điểm: \(entry.score)").font(.body)
+                            }
+                            
+                        }
+                    }
+                    
+                   
+                    .onAppear{
+                        SoundManager.shared.playSound(named: "interface")
+                    }
+                    
+                }
+
             }
         }
     }
@@ -60,30 +92,62 @@ struct LeaderboardView: View {
     }
     struct AchievementListView: View {
         @ObservedObject var achievementManager: AchievementManager
-        
+        let lang = UserDefaults.standard.string(forKey: "lang")
         var body: some View {
-            NavigationView {
-                List(achievementManager.achievements) { achievement in
-                    HStack{
-                        Image(achievement.img)
-                            .padding([.trailing],5)
-                        VStack(alignment: .leading) {
-                            Text(achievement.title)
-                                .font(.title)
-                                .fontWeight(.bold)
-                            Text(achievement.description)
-                            if achievement.isUnlocked {
-                                Text("Unlocked!")
-                                    .foregroundColor(.green)
-                            } else {
-                                Text("Locked")
-                                    .foregroundColor(.red)
+            if lang == "ENG" {
+                NavigationView {
+                    VStack {
+                        List(achievementManager.achievements) { achievement in
+                            HStack{
+                                Image(achievement.img)
+                                    .padding([.trailing],5)
+                                VStack(alignment: .leading) {
+                                    Text(achievement.title)
+                                        .font(.title)
+                                        .fontWeight(.bold)
+                                    Text(achievement.description)
+                                    if achievement.isUnlocked {
+                                        Text("Unlocked!")
+                                            .foregroundColor(.green)
+                                    } else {
+                                        Text("Locked")
+                                            .foregroundColor(.red)
+                                    }
+                                    
+                                }
                             }
-                            
                         }
                     }
+                    
                 }
-                .navigationBarTitle("Achievements")
+            }
+            else {
+                NavigationView {
+                    VStack {
+                        List(achievementManager.getVieAchievement()) { achievement in
+                            HStack{
+                                Image(achievement.img)
+                                    .padding([.trailing],5)
+                                VStack(alignment: .leading) {
+                                    Text(achievement.title)
+                                        .font(.title)
+                                        .fontWeight(.bold)
+                                    Text(achievement.description)
+                                    if achievement.isUnlocked {
+                                        Text("Đã mở!")
+                                            .foregroundColor(.green)
+                                    } else {
+                                        Text("Chưa mở")
+                                            .foregroundColor(.red)
+                                    }
+                                    
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+
             }
         }
     }

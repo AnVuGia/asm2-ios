@@ -134,6 +134,10 @@ struct firstTabView : View {
                     }
                 
 
+                }.onAppear{
+                    if let temp = UserDefaults.standard.string(forKey: "lang") {
+                        lang = temp
+                    }
                 }
             }.ignoresSafeArea()
         }

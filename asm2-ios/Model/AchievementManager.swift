@@ -36,7 +36,7 @@ class AchievementManager : ObservableObject {
             Achievement(title: "Getting Started!", description: "Defeat the game in easy mode", isUnlocked: false, img: "easy-cup"),
             Achievement(title: "Still too easy...", description: "Defeat the game in normal mode",
                 isUnlocked: false , img: "normal-cup"),
-            Achievement(title: "G.O.A.T", description: "Defeat the game in hard mode", img: "hard-cup")
+            Achievement(title: "G.O.A.T", description: "Defeat the game in hard mode", isUnlocked: false, img: "hard-cup")
             ]
         }
     }
@@ -68,6 +68,14 @@ class AchievementManager : ObservableObject {
     func resetAchievements() {
         achievements = []
         UserDefaults.standard.removeObject(forKey: achievementsKey)
+    }
+    func getVieAchievement() -> [Achievement] {
+        return [
+            Achievement(title: "Mới bắt đầu!", description: "Thắng game ở chế độ Dễ", isUnlocked: achievements[0].isUnlocked, img: "easy-cup"),
+            Achievement(title: "Cần thêm thử thách...", description: "Thắng game ở chế độ Thường",
+                isUnlocked: achievements[1].isUnlocked , img: "normal-cup"),
+            Achievement(title: "G.O.A.T", description: "Thắng game ở chế độ Khó", isUnlocked: achievements[2].isUnlocked , img: "hard-cup")
+            ]
     }
 }
 let achievementManager = AchievementManager()

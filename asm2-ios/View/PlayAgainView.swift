@@ -16,6 +16,7 @@ struct PlayAgainView: View {
     @State private var currentPlace = 0
     private let normalCustomFont : Font = Font.custom("Silver", size: 40)
     let playerName : String
+    let lang = UserDefaults.standard.string(forKey: "lang")
     init(score: Int, playerName : String) {
         self.score = score
         self.playerName = playerName
@@ -26,36 +27,69 @@ struct PlayAgainView: View {
                 Color.black
                     .ignoresSafeArea()
                     .opacity(0.7)
-                
-                VStack {
-                    Text("GAME OVER")
-                        .foregroundColor(Color.white)
-                        .font(.custom("Silver", size: 90))
-                    Text("Your score: \(score)")
-                        .foregroundColor(Color.white)
-                        .font(normalCustomFont)
-                    if(currentPlace > 0){
-                        Text("Your place: #\(currentPlace)")
+                if lang == "ENG" {
+                    VStack {
+                        Text("GAME OVER")
+                            .foregroundColor(Color.white)
+                            .font(.custom("Silver", size: 90))
+                        Text("Your score: \(score)")
                             .foregroundColor(Color.white)
                             .font(normalCustomFont)
-                    } else {
-                        Text("Your place: None")
-                            .foregroundColor(Color.white)
-                            .font(normalCustomFont)
-                    }
-                    NavigationLink(destination: WelcomeView()) {
-                        ZStack{
-                            Image("button")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 150)
-                            Text("Play Again")
+                        if(currentPlace > 0){
+                            Text("Your place: #\(currentPlace)")
                                 .foregroundColor(Color.white)
                                 .font(normalCustomFont)
+                        } else {
+                            Text("Your place: None")
+                                .foregroundColor(Color.white)
+                                .font(normalCustomFont)
+                        }
+                        NavigationLink(destination: WelcomeView()) {
+                            ZStack{
+                                Image("button")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 150)
+                                Text("Play Again")
+                                    .foregroundColor(Color.white)
+                                    .font(normalCustomFont)
+                                
+                            }
                             
                         }
-                        
                     }
+                } else {
+                    VStack {
+                        Text("GAME OVER")
+                            .foregroundColor(Color.white)
+                            .font(.custom("Silver", size: 90))
+                        Text("Diem cua ban: \(score)")
+                            .foregroundColor(Color.white)
+                            .font(normalCustomFont)
+                        if(currentPlace > 0){
+                            Text("Xep hang: #\(currentPlace)")
+                                .foregroundColor(Color.white)
+                                .font(normalCustomFont)
+                        } else {
+                            Text("Xep hang: Khong co hang")
+                                .foregroundColor(Color.white)
+                                .font(normalCustomFont)
+                        }
+                        NavigationLink(destination: WelcomeView()) {
+                            ZStack{
+                                Image("button")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 150)
+                                Text("Play Again")
+                                    .foregroundColor(Color.white)
+                                    .font(normalCustomFont)
+                                
+                            }
+                            
+                        }
+                    }
+
                 }
             }.onAppear {
                 SoundManager.shared.stopAllSounds()
