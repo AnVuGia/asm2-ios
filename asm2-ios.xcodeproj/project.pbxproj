@@ -28,7 +28,6 @@
 		E33A32AB2A9352C700F98879 /* MainNormalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33A32AA2A9352C700F98879 /* MainNormalView.swift */; };
 		E33A32AD2A93693B00F98879 /* PokeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33A32AC2A93693B00F98879 /* PokeData.swift */; };
 		E360E70D2A8F36030057CE20 /* asm2_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360E70C2A8F36030057CE20 /* asm2_iosApp.swift */; };
-		E360E70F2A8F36030057CE20 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360E70E2A8F36030057CE20 /* ContentView.swift */; };
 		E360E7112A8F36040057CE20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E360E7102A8F36040057CE20 /* Assets.xcassets */; };
 		E360E7152A8F36040057CE20 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E360E7142A8F36040057CE20 /* Preview Assets.xcassets */; };
 		E360E71F2A8F36040057CE20 /* asm2_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360E71E2A8F36040057CE20 /* asm2_iosTests.swift */; };
@@ -101,7 +100,6 @@
 		E33A32AC2A93693B00F98879 /* PokeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeData.swift; sourceTree = "<group>"; };
 		E360E7092A8F36030057CE20 /* asm2-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "asm2-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E360E70C2A8F36030057CE20 /* asm2_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = asm2_iosApp.swift; sourceTree = "<group>"; };
-		E360E70E2A8F36030057CE20 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E360E7102A8F36040057CE20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E360E7122A8F36040057CE20 /* asm2_ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = asm2_ios.entitlements; sourceTree = "<group>"; };
 		E360E7142A8F36040057CE20 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -224,7 +222,6 @@
 				E360E7382A8F3A0A0057CE20 /* Model */,
 				E360E7372A8F3A010057CE20 /* View */,
 				E360E70C2A8F36030057CE20 /* asm2_iosApp.swift */,
-				E360E70E2A8F36030057CE20 /* ContentView.swift */,
 				E360E7102A8F36040057CE20 /* Assets.xcassets */,
 				E360E7122A8F36040057CE20 /* asm2_ios.entitlements */,
 				E360E7132A8F36040057CE20 /* Preview Content */,
@@ -468,7 +465,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D67B36532AA089C7003652A1 /* LeaderboardView.swift in Sources */,
-				E360E70F2A8F36030057CE20 /* ContentView.swift in Sources */,
 				E3AE35412A94AC9800B57D93 /* PointBoard.swift in Sources */,
 				E3AE353D2A94AA5400B57D93 /* GameSystem.swift in Sources */,
 				E360E73A2A8F3A220057CE20 /* WelcomeView.swift in Sources */,

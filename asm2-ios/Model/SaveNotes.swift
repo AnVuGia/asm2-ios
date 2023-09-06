@@ -1,9 +1,14 @@
-//
-//  SaveNotes.swift
-//  asm2-ios
-//
-//  Created by An Vu Gia on 29/08/2023.
-//
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2023B
+  Assessment: Assignment 2
+  Author: Vu Gia An
+  ID: s3926888
+  Created  date: 25/08/2023
+  Last modified: 6/09/2023
+  Acknowledgement: Acknowledge the resources that you use here.
+*/
 
 import Foundation
 import SwiftUI
