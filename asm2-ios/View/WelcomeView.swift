@@ -153,7 +153,7 @@ struct secondTabView : View {
                 Color("background-welcome")
                 VStack{
                     NavigationLink {
-                        TutorialView()
+                        TutorialView().environment(\.font , Font.body )
                     } label: {
                         if lang == "ENG" {
                             TextButtonUI(content: "How to play")
