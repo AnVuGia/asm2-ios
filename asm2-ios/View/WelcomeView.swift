@@ -74,6 +74,13 @@ struct WelcomeView: View {
             .onAppear{
                 SoundManager.shared.stopAllSounds()
                 SoundManager.shared.playSound(named: "welcome-theme", volume: 0.5, isLooping: true)
+                if let currLang = UserDefaults.standard.string(forKey: "lang") {
+                    
+                } else {
+                    let temp = "ENG"
+                    UserDefaults.standard.set(temp, forKey: "lang")
+                }
+
             }
         }
         .navigationBarBackButtonHidden(true)
@@ -84,6 +91,7 @@ struct WelcomeView: View {
 struct firstTabView : View {
     @State private var difficulty : Int = 1
     @State private var playerName = "Unknown"
+    @State var lang = "ENG"
     var body: some View {
         NavigationStack {
             ZStack {
@@ -92,19 +100,35 @@ struct firstTabView : View {
                    
                     VStack{
                         NavigationLink(destination: MainNormalView(difficulty: difficulty, isContinue: false, playerName: playerName), label: {
-                            TextButtonUI(content: "Game Start")
+                            if lang == "ENG" {
+                                TextButtonUI(content: "Game Start")
+                            } else {
+                                TextButtonUI(content: "Bat dau")
+
+                            }
                         })
                         .padding([.bottom], 6)
                             
                         NavigationLink {
                             MainNormalView(difficulty: difficulty, isContinue: true, playerName: playerName)
                         } label: {
-                            TextButtonUI(content: "Continue")
+                            if lang == "ENG" {
+                                TextButtonUI(content: "Continue")
+                            } else {
+                                TextButtonUI(content: "Tiep tuc")
+
+                            }
+                            
                         }.padding([.bottom], 6)
                         NavigationLink {
-                            DifficultyView(difficulty: $difficulty, playerName: $playerName)
+                            DifficultyView(difficulty: $difficulty, playerName: $playerName, bindLang: $lang)
                         } label: {
-                            TextButtonUI(content: "Setting")
+                            if lang == "ENG" {
+                                TextButtonUI(content: "Setting")
+                            } else {
+                                TextButtonUI(content: "Thiet lap")
+
+                            }
                         }.padding([.bottom], 6)
 
                     }
@@ -118,6 +142,7 @@ struct firstTabView : View {
     }
 }
 struct secondTabView : View {
+    let lang = UserDefaults.standard.string(forKey: "lang")
     var body: some View {
         NavigationStack {
             ZStack {
@@ -126,12 +151,22 @@ struct secondTabView : View {
                     NavigationLink {
                         TutorialView()
                     } label: {
-                        TextButtonUI(content: "How to play")
+                        if lang == "ENG" {
+                            TextButtonUI(content: "How to play")
+                        } else {
+                            TextButtonUI(content: "Huong dan")
+
+                        }
                     }
                     NavigationLink {
                         HighScoreView()
                     } label: {
-                        TextButtonUI(content: "Leaderboard")
+                        if lang == "ENG" {
+                            TextButtonUI(content: "Leaderboard")
+                        } else {
+                            TextButtonUI(content: "Xep hang")
+
+                        }
                     }
                 }
             }.ignoresSafeArea()

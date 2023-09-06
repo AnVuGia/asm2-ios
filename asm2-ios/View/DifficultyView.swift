@@ -16,8 +16,10 @@ struct DifficultyView: View {
     private let normalCustomFont : Font = Font.custom("Silver", size: 60)
     @Binding var difficulty : Int
     @Binding var playerName : String
+    @Binding var bindLang : String
     @State private var text : String = ""
     @State var currentDifficulty = "Easy"
+    @State private var currentLang = "VIE"
     @Environment(\.colorScheme) var colorScheme
     var body: some View {
         ZStack {
@@ -37,29 +39,31 @@ struct DifficultyView: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .frame(width: UIScreen.main.bounds.width-200)
                 
-                Button {
-                    difficulty = 1
-                    currentDifficulty = "Easy"
-                } label: {
-                    DialogButton(text: "Easy")
+                HStack {
+                    Button {
+                        difficulty = 1
+                        currentDifficulty = "Easy"
+                    } label: {
+                        DialogButton(text: "Easy")
+                    }
+                    
+                    Button {
+                        difficulty = 2
+                        currentDifficulty = "Normal"
+                    } label: {
+                        DialogButton(text: "Normal")
+                    }
+                    Button {
+                        difficulty = 4
+                        currentDifficulty = "Hard"
+                    } label: {
+                        DialogButton(text: "Hard")
+                    }
                 }
-                Button {
-                    difficulty = 2
-                    currentDifficulty = "Normal"
-                } label: {
-                    DialogButton(text: "Normal")
-                }
-                Button {
-                    difficulty = 4
-                    currentDifficulty = "Hard"
-                } label: {
-                    DialogButton(text: "Hard")
-                }
-          
+                HStack {
                     Text("Theme: ")
-                        .font(.custom("Silver", size: 70))
-                    .foregroundColor(Color.white)
-                
+                            .font(.custom("Silver", size: 50))
+                        .foregroundColor(Color.white)
                     Button {
                         toggleColorScheme()
                        
@@ -70,6 +74,32 @@ struct DifficultyView: View {
                             DialogButton(text: "Light")
                         }
                     }
+
+                }
+                Text("Current Language: \(currentLang)")
+                        .font(.custom("Silver", size: 50))
+                    .foregroundColor(Color.white)
+                HStack {
+                    Button {
+                        currentLang = "ENG"
+                        UserDefaults.standard.set(currentLang, forKey: "lang")
+                        bindLang = currentLang
+                    } label: {
+                        DialogButton(text: "ENG")
+                       
+                    }
+                    Button {
+                        currentLang = "VIE"
+                        UserDefaults.standard.set(currentLang, forKey: "lang")
+                        bindLang = currentLang
+                    } label: {
+                        DialogButton(text: "VIE")
+                                            }
+
+                }
+                
+                
+                
                    
 
                 
@@ -77,6 +107,12 @@ struct DifficultyView: View {
         }.onAppear{
             SoundManager.shared.playSound(named: "interface")
             text = playerName
+            if let currLang = UserDefaults.standard.string(forKey: "lang") {
+                currentLang = currLang
+            } else {
+                let temp = "ENG"
+                UserDefaults.standard.set(temp, forKey: "lang")
+            }
         }
         .onDisappear{
             playerName = text
@@ -92,13 +128,13 @@ struct DifficultyView: View {
 }
 struct DialogButton : View {
     var text : String
-    private let normalCustomFont : Font = Font.custom("Silver", size: 60)
+    private let normalCustomFont : Font = Font.custom("Silver", size: 40)
     var body: some View{
         ZStack{
             Image("dialog")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 200)
+                .frame(width: 120)
                 .clipShape(RoundedRectangle(cornerRadius: 15))
             Text("\(text)")
                 .font(normalCustomFont)
@@ -111,6 +147,7 @@ struct DifficultyView_Previews: PreviewProvider {
     static var previews: some View {
         @State var difficulty = 1
         @State var playerName = "Test"
-        DifficultyView(difficulty: $difficulty, playerName: $playerName)
+        @State var lang = "ENG"
+        DifficultyView(difficulty: $difficulty, playerName: $playerName, bindLang: $lang )
     }
 }

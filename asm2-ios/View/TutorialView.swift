@@ -38,11 +38,22 @@ struct TutorialPage: View {
 }
 
 struct TutorialView: View {
-    let tutorialPages = [
-        TutorialPage(image: "tutorial_image_1", title: "Welcome to PokeFlipper", description: "Learn how to play our amazing game."),
-        TutorialPage(image: "tutorial_image_2", title: "Get Started", description: "Swipe through this tutorial to get started."),
-    ]
+    let lang = UserDefaults.standard.string(forKey: "lang")
+    @State var tutorialPages : [TutorialPage] = []
+    init(){
+        if lang == "ENG" {
+            tutorialPages = [
+               TutorialPage(image: "tutorial_image_1", title: "Welcome to PokeFlipper", description: "Learn how to play our amazing game."),
+               TutorialPage(image: "tutorial_image_2", title: "Get Started", description: "Swipe through this tutorial to get started."),
+           ]
+        } else {
+            tutorialPages = [
+               TutorialPage(image: "tutorial_image_1", title: "Chào mừng tới PokeFlipper", description: "Hãy cùng nhau học cách chơi nào!."),
+               TutorialPage(image: "tutorial_image_2", title: "Bắt đầu!", description: "Trượt qua phải để xem tiếp tục"),
+           ]
 
+        }
+    }
     var body: some View {
         TabView {
             ForEach(tutorialPages, id: \.title) { page in

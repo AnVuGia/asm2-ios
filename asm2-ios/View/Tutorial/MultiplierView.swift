@@ -13,7 +13,17 @@
 import SwiftUI
 
 struct MultiplierView: View {
+    let lang = UserDefaults.standard.string(forKey: "lang")
     var body: some View {
+        if lang == "ENG" {
+            Tut4_EngView()
+        } else {
+            Tut4_VieView()
+        }
+    }
+}
+struct Tut4_EngView : View {
+    var body: some View{
         ZStack {
             Text("4. Score Multiplier")
                 .font(.largeTitle)
@@ -47,7 +57,42 @@ struct MultiplierView: View {
         }
     }
 }
+struct Tut4_VieView: View {
+    var body: some View {
+        ZStack {
+            Text("4. Hệ số điểm")
+                .font(.largeTitle)
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height-200, alignment: .top)
+            Grid{
+                GridRow{
+                    Text("Điểm cơ bản: ")
+                   Text("200")
+                }.padding()
+                GridRow{
+                    Text("3 nguyên tố giống nhau: ")
+                    Text("x3")
+                }.padding()
+                GridRow{
+                    Text("3 nguyên tố khác nhau: ")
+                    Text("x3")
+                }.padding()
+                GridRow{
+                    Text("2 nguyên tố giống và 1 khác: ")
+                    Text("x2")
+                }.padding()
+                GridRow{
+                    Text("Combo khi có cả ngọc Hỗn Loạn và ngọc Hoà Hợp: ")
+                    Text("x5")
+                }.padding()
 
+
+            }
+          
+               
+        }
+
+    }
+}
 struct MultiplierView_Previews: PreviewProvider {
     static var previews: some View {
         MultiplierView()

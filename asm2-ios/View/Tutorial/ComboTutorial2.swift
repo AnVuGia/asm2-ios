@@ -13,6 +13,16 @@
 import SwiftUI
 
 struct ComboTutorial2: View {
+    let lang = UserDefaults.standard.string(forKey: "lang")
+    var body: some View {
+        if lang == "ENG" {
+            Tut2_EngView()
+        } else  {
+            Tut2_VieView()
+        }
+    }
+}
+struct Tut2_EngView : View {
     var body: some View {
         ZStack {
             Text("2.1 More Combo!")
@@ -46,6 +56,43 @@ struct ComboTutorial2: View {
             }
                
         }
+    }
+}
+struct Tut2_VieView : View {
+    var body: some View {
+        ZStack {
+            Text("2.1 Thêm về Combo!")
+                .font(.largeTitle)
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height-200, alignment: .top)
+            VStack{
+                HStack {
+                    Text("Nếu bạn có 3 nguyên tố khác nhau, bạn sẽ tạo ra ngọc Hỗn Loạn")
+                   Image("chaoscombo")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 150)
+                }.padding()
+                HStack {
+                    Text("Nếu bạn có 3 nguyên tố trùng nhau bạn sẽ tạo ra ngọc Hoà Hợp")
+                    Image("resonancecombo")
+                         .resizable()
+                         .aspectRatio(contentMode: .fit)
+                         .frame(width: 150)
+                }.padding()
+                Text("Nếu bạn tạo ra một combo không có ở trên, bạn sẽ tạo ra ngọc Hoà Hợp, nếu bạn đã có sẵn ngọc Hoà Hợp, bạn tạo ngọc Hỗn Loạn")
+                    .padding()
+                HStack {
+                    Text("Nếu bạn đang sở hữu cả 2 loại ngọc, combo tiếp theo sẽ tạo nên một số điểm LỚN cho bạn")
+                    Image("fullcombo")
+                         .resizable()
+                         .aspectRatio(contentMode: .fit)
+                         .frame(width: 150)
+                }.padding()
+         
+            }
+               
+        }
+
     }
 }
 
