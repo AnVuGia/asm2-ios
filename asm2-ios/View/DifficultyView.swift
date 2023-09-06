@@ -13,6 +13,7 @@ struct DifficultyView: View {
     @Binding var playerName : String
     @State private var text : String = ""
     @State var currentDifficulty = "Easy"
+    @Environment(\.colorScheme) var colorScheme
     var body: some View {
         ZStack {
             Color.black
@@ -35,47 +36,37 @@ struct DifficultyView: View {
                     difficulty = 1
                     currentDifficulty = "Easy"
                 } label: {
-                    ZStack{
-                        Image("dialog")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 200)
-                            .clipShape(RoundedRectangle(cornerRadius: 15))
-                        Text("Easy")
-                            .font(normalCustomFont)
-                            .foregroundColor(Color.black)
-                    }
+                    DialogButton(text: "Easy")
                 }
                 Button {
                     difficulty = 2
                     currentDifficulty = "Normal"
                 } label: {
-                    ZStack{
-                        Image("dialog")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 200)
-                            .clipShape(RoundedRectangle(cornerRadius: 15))
-                        Text("Normal")
-                            .font(normalCustomFont)
-                            .foregroundColor(Color.black)
-                    }
+                    DialogButton(text: "Normal")
                 }
                 Button {
                     difficulty = 4
                     currentDifficulty = "Hard"
                 } label: {
-                    ZStack{
-                        Image("dialog")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 200)
-                            .clipShape(RoundedRectangle(cornerRadius: 15))
-                        Text("Hard")
-                            .font(normalCustomFont)
-                            .foregroundColor(Color.black)
-                    }
+                    DialogButton(text: "Hard")
                 }
+          
+                    Text("Theme: ")
+                        .font(.custom("Silver", size: 70))
+                    .foregroundColor(Color.white)
+                
+                    Button {
+                        toggleColorScheme()
+                       
+                    } label: {
+                        if (colorScheme == .dark){
+                            DialogButton(text: "Dark")
+                        } else {
+                            DialogButton(text: "Light")
+                        }
+                    }
+                   
+
                 
             }
         }.onAppear{
@@ -84,6 +75,29 @@ struct DifficultyView: View {
         }
         .onDisappear{
             playerName = text
+        }
+    }
+    private func toggleColorScheme() {
+           if colorScheme == .light {
+               UIApplication.shared.windows.first?.overrideUserInterfaceStyle = .dark
+           } else {
+               UIApplication.shared.windows.first?.overrideUserInterfaceStyle = .light
+           }
+       }
+}
+struct DialogButton : View {
+    var text : String
+    private let normalCustomFont : Font = Font.custom("Silver", size: 60)
+    var body: some View{
+        ZStack{
+            Image("dialog")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 200)
+                .clipShape(RoundedRectangle(cornerRadius: 15))
+            Text("\(text)")
+                .font(normalCustomFont)
+                .foregroundColor(Color.black)
         }
     }
 }

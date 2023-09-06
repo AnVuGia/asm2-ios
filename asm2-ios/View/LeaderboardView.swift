@@ -83,14 +83,88 @@ struct LeaderboardView: View {
         }
     }
 
-    struct HighScoreView : View {
-        var body: some View{
-            ScrollView{
-                LeaderboardView()
-                AchievementListView(achievementManager: achievementManager)
+struct HighScoreView : View {
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+
+    var body: some View {
+            if horizontalSizeClass == .compact {
+                NavigationView {
+                // iPhone layout
+                TabView {
+                    NavigationView {
+                        LeaderboardView()
+                    }
+                    .tabItem {
+                        Image(systemName: "list.dash")
+                        Text("Leaderboard")
+                    }
+                    
+                    NavigationView {
+                        AchievementListView(achievementManager: AchievementManager())
+                    }
+                    .tabItem {
+                        Image(systemName: "star.fill")
+                        Text("Achievements")
+                    }
+                }
+                .navigationBarTitle("High Scores")
             }
-        }
+            } else {
+                //ipad layout
+                VStack {
+                    List {
+                        Text("Top 10 All-Time").font(.largeTitle)
+                        
+                        // Retrieve the top 10 high scores
+                                            Grid{
+                                ForEach(0..<min(10, leaderboardManager.getLeaderboard().count), id: \.self) { index in
+                                    let entry = leaderboardManager.getLeaderboard()[index]
+                                    GridRow{
+                                        Text("\(index+1)").font(.headline)
+                                        Spacer()
+                                        Text("\(entry.username):").font(.body)
+                                        Spacer()
+                                        Text("Score: \(entry.score)").font(.body)
+                                    }
+                                    
+                                }
+                            }
+                            
+                            .navigationBarTitle("Leaderboard")
+                            .onAppear{
+                                SoundManager.shared.playSound(named: "interface")
+                        }
+                        
+                    }
+                    List(achievementManager.achievements) { achievement in
+                        HStack{
+                            Image(achievement.img)
+                                .padding([.trailing],5)
+                            VStack(alignment: .leading) {
+                                Text(achievement.title)
+                                    .font(.title)
+                                    .fontWeight(.bold)
+                                Text(achievement.description)
+                                if achievement.isUnlocked {
+                                    Text("Unlocked!")
+                                        .foregroundColor(.green)
+                                } else {
+                                    Text("Locked")
+                                        .foregroundColor(.red)
+                                }
+                                
+                            }
+                        }
+                    }
+                    .navigationBarTitle("Achievements")
+                }
+                
+            }
+        
     }
+    
+}
+
     struct HighScoreView_Previews: PreviewProvider {
         static var previews: some View {
             HighScoreView()
